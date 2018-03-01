@@ -1,8 +1,8 @@
 package com.company;
-import java.util.*;
+import java.util.ArrayList;
 
 public class Board {
-    ArrayList[][] board = new ArrayList[8][8];
+    Piece[][] board = new Piece[8][8];
     public Board()
     {
         //Black piece row
@@ -13,6 +13,7 @@ public class Board {
         board[0][4] = new King(true);
         board[0][5] = new Bishop(true);
         board[0][6] = new Knight(true);
+        board[0][0] = new Rook(true);
         //Black pawn row
         for(int i = 0;i<7;i++)
             board[1][i] = new Pawn(true);
@@ -28,6 +29,16 @@ public class Board {
         board[7][5] = new Bishop(false);
         board[7][6] = new Knight(false);
         board[7][7] = new Rook(false);
+    }
+
+
+
+    public String toString(){
+        return board[7][0].toString();
+    }
+
+    public void main(){
+        System.out.println(toString());
     }
 }
 
