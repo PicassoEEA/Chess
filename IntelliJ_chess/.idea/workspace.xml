@@ -15,12 +15,18 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD:chess/.idea/workspace.xml
             <state relative-caret-position="75">
               <caret line="5" column="35" lean-forward="false" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="35" />
               <folding>
                 <element signature="e#86#87#0" expanded="true" />
                 <element signature="e#128#129#0" expanded="true" />
               </folding>
+=======
+            <state relative-caret-position="30">
+              <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+              <folding />
+>>>>>>> f7148b10b0ed732df8dac4df0a26c5a4635d62e3:IntelliJ_chess/.idea/workspace.xml
             </state>
           </provider>
         </entry>
@@ -28,8 +34,13 @@
       <file leaf-file-name="Board.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/Board.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD:chess/.idea/workspace.xml
             <state relative-caret-position="135">
               <caret line="9" column="34" lean-forward="true" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
+=======
+            <state relative-caret-position="60">
+              <caret line="4" column="47" lean-forward="true" selection-start-line="4" selection-start-column="47" selection-end-line="4" selection-end-column="47" />
+>>>>>>> f7148b10b0ed732df8dac4df0a26c5a4635d62e3:IntelliJ_chess/.idea/workspace.xml
               <folding />
             </state>
           </provider>
@@ -59,9 +70,15 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
+<<<<<<< HEAD:chess/.idea/workspace.xml
     <option name="x" value="255" />
     <option name="y" value="59" />
     <option name="width" value="1164" />
+=======
+    <option name="x" value="193" />
+    <option name="y" value="97" />
+    <option name="width" value="1237" />
+>>>>>>> f7148b10b0ed732df8dac4df0a26c5a4635d62e3:IntelliJ_chess/.idea/workspace.xml
     <option name="height" value="750" />
   </component>
   <component name="ProjectView">
@@ -79,23 +96,16 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD:chess/.idea/workspace.xml
+=======
+      <pane id="PackagesPane" />
+>>>>>>> f7148b10b0ed732df8dac4df0a26c5a4635d62e3:IntelliJ_chess/.idea/workspace.xml
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="chess" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chess" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="chess" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chess" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="chess" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chess" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="company" type="462c0819:PsiDirectoryNode" />
+              <item name="IntelliJ_chess" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IntelliJ_chess" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -104,15 +114,25 @@
       <pane id="Scope" />
       <pane id="AndroidView" />
       <pane id="Scratches" />
+<<<<<<< HEAD:chess/.idea/workspace.xml
       <pane id="PackagesPane" />
+=======
+>>>>>>> f7148b10b0ed732df8dac4df0a26c5a4635d62e3:IntelliJ_chess/.idea/workspace.xml
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+<<<<<<< HEAD:chess/.idea/workspace.xml
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+=======
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+>>>>>>> f7148b10b0ed732df8dac4df0a26c5a4635d62e3:IntelliJ_chess/.idea/workspace.xml
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -181,7 +201,11 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
+<<<<<<< HEAD:chess/.idea/workspace.xml
     <frame x="255" y="59" width="1164" height="750" extended-state="0" />
+=======
+    <frame x="193" y="97" width="1237" height="750" extended-state="0" />
+>>>>>>> f7148b10b0ed732df8dac4df0a26c5a4635d62e3:IntelliJ_chess/.idea/workspace.xml
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -220,6 +244,70 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Board.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Board.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Board.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="8" lean-forward="true" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Board.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="10" lean-forward="false" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -298,6 +386,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD:chess/.idea/workspace.xml
         <state relative-caret-position="75">
           <caret line="5" column="35" lean-forward="false" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="35" />
           <folding>
@@ -311,14 +400,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="12" lean-forward="false" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
+=======
+        <state relative-caret-position="30">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+>>>>>>> f7148b10b0ed732df8dac4df0a26c5a4635d62e3:IntelliJ_chess/.idea/workspace.xml
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Board.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD:chess/.idea/workspace.xml
         <state relative-caret-position="135">
           <caret line="9" column="34" lean-forward="true" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
+=======
+        <state relative-caret-position="60">
+          <caret line="4" column="47" lean-forward="true" selection-start-line="4" selection-start-column="47" selection-end-line="4" selection-end-column="47" />
+>>>>>>> f7148b10b0ed732df8dac4df0a26c5a4635d62e3:IntelliJ_chess/.idea/workspace.xml
           <folding />
         </state>
       </provider>
@@ -380,13 +478,20 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
+<<<<<<< HEAD:chess/.idea/workspace.xml
                 <option value="0.6" />
+=======
+>>>>>>> f7148b10b0ed732df8dac4df0a26c5a4635d62e3:IntelliJ_chess/.idea/workspace.xml
               </list>
             </option>
           </splitter-proportions>
         </settings>
       </state>
+<<<<<<< HEAD:chess/.idea/workspace.xml
       <state key="ProjectJDKs.UI">
+=======
+      <state key="ProjectLibrariesConfigurable.UI">
+>>>>>>> f7148b10b0ed732df8dac4df0a26c5a4635d62e3:IntelliJ_chess/.idea/workspace.xml
         <settings>
           <splitter-proportions>
             <option name="proportions">
@@ -397,7 +502,11 @@
           </splitter-proportions>
         </settings>
       </state>
+<<<<<<< HEAD:chess/.idea/workspace.xml
       <state key="ProjectLibrariesConfigurable.UI">
+=======
+      <state key="ScopeChooserConfigurable.UI">
+>>>>>>> f7148b10b0ed732df8dac4df0a26c5a4635d62e3:IntelliJ_chess/.idea/workspace.xml
         <settings>
           <splitter-proportions>
             <option name="proportions">
