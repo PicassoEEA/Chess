@@ -1,9 +1,34 @@
 package com.company;
+import java.util.ArrayList;
 
 public class Board {
-    String[][] board = null;
+    ArrayList [][] board = new ArrayList[8][8];
 
-    public String toString(){
-        
-    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
