@@ -1,9 +1,5 @@
 # Chess
-hahahahahah
-hehehehehehe steeeeeeeeeeeeevo
+This is an unfinished priject 
 
-Jeremy already looked!!
-
-
-
-Branch test
+V0.1 with board initialization
+V0.1.1 with factory of pieces
