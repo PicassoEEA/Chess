@@ -2,7 +2,9 @@ package com.company;
 
 public class Bishop extends Piece {
     public boolean color;// false for white and true for black
-    public static int numOfPieces = 0;
+    private static int numOfWhitePieces = 0;
+    private static int numOfBlackPieces = 0;
+
     private Bishop (boolean color){
         this.color = color;
     }
@@ -15,9 +17,15 @@ public class Bishop extends Piece {
     }
 
     public static Bishop createBishop(boolean color){
-        if (numOfPieces < 4){
-            Bishop Bishop1 = new Bishop(color);
-            return Bishop1;
+        if (!color && numOfWhitePieces < 2){
+            Bishop bishop = new Bishop(color);
+            numOfWhitePieces ++;
+            return bishop;
+        }
+        else if (color && numOfBlackPieces < 2){
+            Bishop bishop = new Bishop(color);
+            numOfBlackPieces ++;
+            return bishop;
         }
         else throw new Error("created too many Bishops");
     }

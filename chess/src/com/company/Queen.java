@@ -2,7 +2,9 @@ package com.company;
 
 public class Queen extends Piece{
     public boolean color;// false for white and true for black
-    public static int numOfPieces = 0;
+    private static int numOfWhitePieces = 0;
+    private static int numOfBlackPieces = 0;
+
     private Queen (boolean color){
         this.color = color;
     }
@@ -15,9 +17,16 @@ public class Queen extends Piece{
     }
 
     public static Queen createQueen(boolean color){
-        if (numOfPieces < 2){
-            Queen Queen1 = new Queen(color);
-            return Queen1;
+        if (!color && numOfWhitePieces < 9){
+            Queen queen = new Queen(color);
+            numOfWhitePieces ++;
+            return queen;
+
+        }
+        else if (color && numOfBlackPieces < 9){
+            Queen queen = new Queen(color);
+            numOfBlackPieces ++;
+            return queen;
         }
         else throw new Error("created too many Queens");
     }

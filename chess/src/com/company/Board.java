@@ -18,11 +18,13 @@ public class Board {
         //Black pawn row
         for(int i = 0;i < pieces.length ; i++)
             pieces[1][i] = Pawn.createPawn(true);
+
         //empty board
-        for (int i = 0 ; i < 4 ; i++){
+        /*for (int i = 0 ; i < 4 ; i++){
             for (int j = 0 ; j < pieces.length ; j++)
                 pieces[i+2][j] = new EmptyPiece();
-        }
+        }*/
+
         //White pawn row
         for(int i = 0;i < pieces.length ; i++)
             pieces[6][i] = Pawn.createPawn(false);
@@ -44,7 +46,10 @@ public class Board {
         for (int i = 0 ; i < pieces.length ; i++){
             output += i + "  ";
             for (int j = 0 ; j < pieces[0].length ; j++){
-                output += pieces[i][j] + " ";
+                if (pieces[i][j] == null)
+                    output += "    ";
+                else
+                    output += pieces[i][j] + " ";
             }
             output += "\n";
         }
