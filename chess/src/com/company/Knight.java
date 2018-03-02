@@ -12,15 +12,13 @@ public class Knight extends Piece{
             return "BKn";
         else
             return "WKn";
-
     }
-    public static createKnight (boolean color){
 
+    public static Knight createKnight (boolean color){
         if (numOfPieces < 4){
             Knight knight1 = new Knight(color);
             return knight1;
         }
         else throw new Error("created too many Pawns");
-
     }
 }

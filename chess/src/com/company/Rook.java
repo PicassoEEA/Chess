@@ -3,25 +3,22 @@ package com.company;
 public class Rook extends Piece{
     public boolean color;// false for white and true for black
     public static int numOfPieces = 0;
-    public Rook (boolean color){
+    private Rook (boolean color){
         this.color = color;
     }
 
     public String toString() {
-        if (color) {
+        if (color)
             return "BR ";
-        } else {
+        else
             return "WR ";
-        }
     }
-        public  Rook createRook(boolean color){
 
-            if (numOfPieces < 16){
+        public static Rook createRook(boolean color){
+            if (numOfPieces < 4){
                 Rook Rook1 = new Rook(color);
                 return Rook1;
             }
-            else throw new Error("too many");
-
+            else throw new Error("create too many Rooks");
         }
-
 }
