@@ -17,7 +17,7 @@ public class Board {
 
         //Black pawn row
         for(int i = 0;i < pieces.length ; i++)
-            pieces[1][i] = new Pawn(true);
+            pieces[1][i] = Pawn.createPawn(true);
         //empty board
         for (int i = 0 ; i < 4 ; i++){
             for (int j = 0 ; j < pieces.length ; j++)
@@ -25,7 +25,7 @@ public class Board {
         }
         //White pawn row
         for(int i = 0;i < pieces.length ; i++)
-            pieces[6][i] = new Pawn(false);
+            pieces[6][i] = Pawn.createPawn(false);
         //White piece rom
         pieces[7][0] = new Rook(false);
         pieces[7][1] = new Knight(false);
