@@ -9,10 +9,10 @@ public class Bishop extends Piece {
 
     public String toString(){
         if (color) {
-            return "BKn";
+            return "BB ";
         }
         else {
-            return "WKn";
+            return "WB ";
         }
 
     }

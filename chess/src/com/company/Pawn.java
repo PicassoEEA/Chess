@@ -9,10 +9,10 @@ public class Pawn extends Piece {
 
     public String toString(){
         if (color) {
-            return "BP";
+            return "BP ";
         }
         else {
-            return "WP";
+            return "WP ";
         }
 
     }

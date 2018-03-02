@@ -9,10 +9,10 @@ public class Rook extends Piece{
 
     public String toString(){
         if (color) {
-            return "BR";
+            return "BR ";
         }
         else {
-            return "WR";
+            return "WR ";
         }
 
     }

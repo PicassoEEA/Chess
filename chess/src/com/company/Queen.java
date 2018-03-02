@@ -9,10 +9,10 @@ public Queen (boolean color){
 
     public String toString(){
         if (color) {
-            return "BQ";
+            return "BQ ";
         }
         else {
-            return "WQ";
+            return "WQ ";
         }
 
     }
