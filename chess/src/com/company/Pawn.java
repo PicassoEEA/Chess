@@ -1,14 +1,12 @@
 package com.company;
 
-//import com.sun.javaws.exceptions.ErrorCodeResponseException;
-
 public class Pawn extends Piece {
 
+    protected static int numOfWhitePieces = 0;
+    protected static int numOfBlackPieces = 0;
     public boolean color;// false for white and true for black
-    private static int numOfWhitePieces = 0;
-    private static int numOfBlackPieces = 0;
 
-    private Pawn (boolean color){
+    protected Pawn (boolean color){
         this.color = color;
     }
 
@@ -18,19 +16,25 @@ public class Pawn extends Piece {
         else
             return "WP ";
     }
-
-    public static Pawn createPawn(boolean color){
-        if (!color && numOfWhitePieces < 9){
-            Pawn pawn = new Pawn(color);
-            numOfWhitePieces ++;
-            return pawn;
-
+    public static int getPieceNum(boolean isBlack)
+    {
+        if(isBlack)
+            return numOfBlackPieces;
+        else
+            return numOfWhitePieces;
+    }
+    public static void changePieceNum(boolean isBlack, boolean isAdd)
+    {
+        if (isBlack) {
+            if (isAdd)
+                numOfBlackPieces += 1;
+            else
+                numOfBlackPieces -= 1;
+        } else {
+            if (isAdd)
+                numOfWhitePieces += 1;
+            else
+                numOfWhitePieces -= 1;
         }
-        else if (color && numOfBlackPieces < 9){
-            Pawn pawn = new Pawn(color);
-            numOfBlackPieces ++;
-            return pawn;
-        }
-        else throw new Error("created too many Pawns");
     }
 }

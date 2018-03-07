@@ -6,18 +6,18 @@ public class Board {
     public Board()
     {
         //Black piece row
-        pieces[0][0] = Rook.createRook(true);
-        pieces[0][1] = Knight.createKnight(true);
-        pieces[0][2] = Bishop.createBishop(true);
-        pieces[0][3] = Queen.createQueen(true);
-        pieces[0][4] = King.createKing(true);
-        pieces[0][5] = Bishop.createBishop(true);
-        pieces[0][6] = Knight.createKnight(true);
-        pieces[0][7] = Rook.createRook(true);
+        pieces[0][0] = Piece.createPiece("Rook",true);
+        pieces[0][1] = Piece.createPiece("Knight",true);
+        pieces[0][2] = Piece.createPiece("Bishop",true);
+        pieces[0][3] = Piece.createPiece("Queen",true);
+        pieces[0][4] = Piece.createPiece("King",true);
+        pieces[0][5] = Piece.createPiece("Bishop",true);
+        pieces[0][6] = Piece.createPiece("Knight",true);
+        pieces[0][7] = Piece.createPiece("Rook",true);
 
         //Black pawn row
         for(int i = 0;i < pieces.length ; i++)
-            pieces[1][i] = Pawn.createPawn(true);
+            pieces[1][i] = Piece.createPiece("Pawn",true);
 
         //empty board
         /*for (int i = 0 ; i < 4 ; i++){
@@ -27,16 +27,16 @@ public class Board {
 
         //White pawn row
         for(int i = 0;i < pieces.length ; i++)
-            pieces[6][i] = Pawn.createPawn(false);
-        //White piece rom
-        pieces[7][0] = Rook.createRook(false);
-        pieces[7][1] = Knight.createKnight(false);
-        pieces[7][2] = Bishop.createBishop(false);
-        pieces[7][4] = Queen.createQueen(false);
-        pieces[7][3] = King.createKing(false);
-        pieces[7][5] = Bishop.createBishop(false);
-        pieces[7][6] = Knight.createKnight(false);
-        pieces[7][7] = Rook.createRook(false);
+            pieces[6][i] = Piece.createPiece("Pawn",false);
+        //White piece row
+        pieces[7][0] = Piece.createPiece("Rook",false);
+        pieces[7][1] = Piece.createPiece("Knight",false);
+        pieces[7][2] = Piece.createPiece("Bishop",false);
+        pieces[7][4] = Piece.createPiece("Queen",false);
+        pieces[7][3] = Piece.createPiece("King",false);
+        pieces[7][5] = Piece.createPiece("Bishop",false);
+        pieces[7][6] = Piece.createPiece("Knight",false);
+        pieces[7][7] = Piece.createPiece("Rook",false);
     }
 
 

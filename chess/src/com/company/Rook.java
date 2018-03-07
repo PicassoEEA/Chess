@@ -2,9 +2,9 @@ package com.company;
 
 public class Rook extends Piece{
     public boolean color;// false for white and true for black
-    private static int numOfWhitePieces = 0;
-    private static int numOfBlackPieces = 0;
-    private Rook (boolean color){
+    protected static int numOfWhitePieces = 0;
+    protected static int numOfBlackPieces = 0;
+    protected Rook (boolean color){
         this.color = color;
     }
 
@@ -14,19 +14,25 @@ public class Rook extends Piece{
         else
             return "WR ";
     }
-
-        public static Rook createRook(boolean color){
-            if (!color && numOfWhitePieces < 9){
-                Rook rook = new Rook(color);
-                numOfWhitePieces ++;
-                return rook;
-
-            }
-            else if (color && numOfBlackPieces < 9){
-                Rook rook= new Rook(color);
-                numOfBlackPieces ++;
-                return rook;
-            }
-            else throw new Error("created too many Rooks");
+    public static int getPieceNum(boolean isBlack)
+    {
+        if(isBlack)
+            return numOfBlackPieces;
+        else
+            return numOfWhitePieces;
+    }
+    public static void changePieceNum(boolean isBlack, boolean isAdd)
+    {
+        if (isBlack) {
+            if (isAdd)
+                numOfBlackPieces += 1;
+            else
+                numOfBlackPieces -= 1;
+        } else {
+            if (isAdd)
+                numOfWhitePieces += 1;
+            else
+                numOfWhitePieces -= 1;
         }
+    }
 }
