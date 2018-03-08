@@ -3,14 +3,14 @@ package com.company;
 public class Knight extends Piece{
     protected static int numOfWhitePieces = 0;
     protected static int numOfBlackPieces = 0;
-    public static boolean color;// false for white and true for black
+    public static boolean isBlack;// false for white and true for black
 
-    protected Knight (boolean color){
-        this.color = color;
+    protected Knight (boolean isBlack){
+        this.isBlack = isBlack;
     }
 
     public String toString(){
-        if (color)
+        if (isBlack)
             return "BKn";
         else
             return "WKn";

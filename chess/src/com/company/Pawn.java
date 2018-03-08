@@ -4,14 +4,14 @@ public class Pawn extends Piece {
 
     protected static int numOfWhitePieces = 0;
     protected static int numOfBlackPieces = 0;
-    public boolean color;// false for white and true for black
+    public boolean isBlack;// false for white and true for black
 
-    protected Pawn (boolean color){
-        this.color = color;
+    protected Pawn (boolean isBlack){
+        this.isBlack = isBlack;
     }
 
     public String toString(){
-        if (color)
+        if (isBlack)
             return "BP ";
         else
             return "WP ";

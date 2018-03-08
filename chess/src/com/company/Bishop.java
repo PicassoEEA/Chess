@@ -1,16 +1,16 @@
 package com.company;
 
 public class Bishop extends Piece {
-    public boolean color;// false for white and true for black
+    public boolean isBlack;// false for white and true for black
     protected static int numOfWhitePieces = 0;
     protected static int numOfBlackPieces = 0;
 
-    protected Bishop (boolean color){
-        this.color = color;
+    protected Bishop (boolean isBlack){
+        this.isBlack = isBlack;
     }
 
     public String toString(){
-        if (color)
+        if (isBlack)
             return "BB ";
         else
             return "WB ";

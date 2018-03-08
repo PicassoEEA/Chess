@@ -1,9 +1,8 @@
 package com.company;
-import java.util.*;
 
 public abstract class Piece {
     public abstract String toString();
-    public static Piece createPiece(String pieceName, boolean color) //Stevo created
+    public static Piece create(String pieceName, boolean isBlack) //Stevo created
     {
         switch(pieceName)
         {
@@ -11,107 +10,107 @@ public abstract class Piece {
             {
                 if(Pawn.getPieceNum(false) <= 8)
                 {
-                    if(color) {
-                        Pawn pawn = new Pawn(color);
-                        Pawn.changePieceNum(color,true);
+                    if(isBlack) {
+                        Pawn pawn = new Pawn(isBlack);
+                        Pawn.changePieceNum(isBlack,true);
                         return pawn;
                     }
                     else {
-                        Pawn pawn = new Pawn(color);
-                        Pawn.changePieceNum(color,true);
+                        Pawn pawn = new Pawn(isBlack);
+                        Pawn.changePieceNum(isBlack,true);
                         return pawn;
                     }
                 }
-                else throw new Error("created too many Pawns. Pawns = "+String.valueOf(Pawn.getPieceNum(color)));
+                else throw new Error("created too many Pawns. Pawns = "+String.valueOf(Pawn.getPieceNum(isBlack)));
             }
             case"Knight":
             {
                 if(Knight.getPieceNum(false) <= 2)
                 {
-                    if(color) {
-                        Knight knight = new Knight(color);
-                        Knight.changePieceNum(color,true);
+                    if(isBlack) {
+                        Knight knight = new Knight(isBlack);
+                        Knight.changePieceNum(isBlack,true);
                         return knight;
                     }
                     else {
-                        Knight knight = new Knight(color);
-                        Knight.changePieceNum(color,true);
+                        Knight knight = new Knight(isBlack);
+                        Knight.changePieceNum(isBlack,true);
                         return knight;
                     }
                 }
-                else throw new Error("created too many Knights. Knights = "+String.valueOf(Knight.getPieceNum(color)));
+                else throw new Error("created too many Knights. Knights = "+String.valueOf(Knight.getPieceNum(isBlack)));
                 //break;
             }
             case"Rook":
             {
                 if(Rook.getPieceNum(false) <= 2)
                 {
-                    if(color) {
-                        Rook rook = new Rook(color);
-                        Rook.changePieceNum(color,true);
+                    if(isBlack) {
+                        Rook rook = new Rook(isBlack);
+                        Rook.changePieceNum(isBlack,true);
                         return rook;
                     }
                     else {
-                        Knight knight = new Knight(color);
-                        Rook.changePieceNum(color,true);
+                        Knight knight = new Knight(isBlack);
+                        Rook.changePieceNum(isBlack,true);
                         return knight;
                     }
                 }
-                else throw new Error("created too many Rooks. Rooks = "+String.valueOf(Rook.getPieceNum(color)));
+                else throw new Error("created too many Rooks. Rooks = "+String.valueOf(Rook.getPieceNum(isBlack)));
                 //break;
             }
             case"Bishop":
             {
                 if(Bishop.getPieceNum(false) <= 2)
                 {
-                    if(color) {
-                        Bishop bishop = new Bishop(color);
-                        Bishop.changePieceNum(color,true);
+                    if(isBlack) {
+                        Bishop bishop = new Bishop(isBlack);
+                        Bishop.changePieceNum(isBlack,true);
                         return bishop;
                     }
                     else {
-                        Bishop bishop = new Bishop(color);
-                        Bishop.changePieceNum(color,true);
+                        Bishop bishop = new Bishop(isBlack);
+                        Bishop.changePieceNum(isBlack,true);
                         return bishop;
                     }
                 }
-                else throw new Error("created too many Bishops. Bishops = "+String.valueOf(Bishop.getPieceNum(color)));
+                else throw new Error("created too many Bishops. Bishops = "+String.valueOf(Bishop.getPieceNum(isBlack)));
                 //break;
             }
             case"Queen":
             {
                 if(Queen.getPieceNum(false) <= 2)
                 {
-                    if(color) {
-                        Queen queen = new Queen(color);
-                        Queen.changePieceNum(color,true);
+                    if(isBlack) {
+                        Queen queen = new Queen(isBlack);
+                        Queen.changePieceNum(isBlack,true);
                         return queen;
                     }
                     else {
-                        Queen queen = new Queen(color);
-                        Queen.changePieceNum(color,true);
+                        Queen queen = new Queen(isBlack);
+                        Queen.changePieceNum(isBlack,true);
                         return queen;
                     }
                 }
-                else throw new Error("created too many Queens. Queens = "+String.valueOf(Queen.getPieceNum(color)));
+                else throw new Error("created too many Queens. Queens = "+String.valueOf(Queen.getPieceNum(isBlack)));
                 //break;
             }
             case"King":
             {
                 if(King.getPieceNum(false) <= 2)
                 {
-                    if(color) {
-                        King king = new King(color);
-                        King.changePieceNum(color,true);
+                    if(isBlack) {
+                        King king = new King(isBlack);
+                        King.changePieceNum(isBlack,true);
                         return king;
                     }
                     else {
-                        King king = new King(color);
-                        King.changePieceNum(color,true);
+                        King king = new King(isBlack);
+                        King.changePieceNum(isBlack,true);
                         return king;
                     }
                 }
-                else throw new Error("created too many Kings.Kings = "+String.valueOf(King.getPieceNum(color)));
+                else throw new Error("created too many Kings.Kings = "+String.valueOf(King.getPieceNum(isBlack)));
                 //break;
             }
         }

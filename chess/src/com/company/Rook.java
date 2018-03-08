@@ -1,15 +1,15 @@
 package com.company;
 
 public class Rook extends Piece{
-    public boolean color;// false for white and true for black
+    public boolean isBlack;// false for white and true for black
     protected static int numOfWhitePieces = 0;
     protected static int numOfBlackPieces = 0;
-    protected Rook (boolean color){
-        this.color = color;
+    protected Rook (boolean isBlack){
+        this.isBlack = isBlack;
     }
 
     public String toString() {
-        if (color)
+        if (isBlack)
             return "BR ";
         else
             return "WR ";
