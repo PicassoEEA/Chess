@@ -1,4 +1,5 @@
 package com.company;
+import Math.abs;
 
 public class Bishop extends Piece {
     public boolean isBlack;// false for white and true for black
@@ -36,5 +37,10 @@ public class Bishop extends Piece {
                 numOfWhitePieces -= 1;
         }
     }
-    public static 
+    public static boolean checkMove(int[] startPos, int[] endPos){ //created by eric at 5.9 18:04
+        if (Math.abs(startPos[0] - endPos[0]) == Math.abs(startPos[1] - endpos[1]))
+            return true;
+        else
+            return false;
+    }
 }
