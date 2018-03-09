@@ -43,7 +43,7 @@ public class Player {
 
         int[] output = new int[2];
         output[0] = index1;
-        output[1] = index2;
+        output[1] = 8 - index2;
 
         return output;
     }
