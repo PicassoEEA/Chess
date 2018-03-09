@@ -9,7 +9,7 @@ public class Player {
     private Player(String name){
         this.name = name;
     }
-    public Player createPlayer(String name){
+    public static Player createPlayer(String name){
         if (numOfPlayers <= 2){
             Player player = new Player(name);
             numOfPlayers ++;

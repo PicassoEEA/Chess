@@ -2,7 +2,7 @@ package com.company;
 
 
 public class Board {
-    Piece[][] pieces = new Piece[8][8];
+    static Piece[][] pieces = new Piece[8][8];
     public Board()
     {
         //Black piece row
@@ -75,13 +75,14 @@ public class Board {
         else if (num == 6) return "G";
         else return "H";
     }
-    public boolean move(int posFromX, int posFromY, int posToX, int posToY)//Stevo created
+    public static boolean move(int[] posFrom, int[] posTo)//Stevo created
     {
-        Piece pieceFrom = pieces[posFromY][posFromX];
-        if(pieceFrom.checkMove(posToX,posToY))
+
+        Piece pieceFrom = pieces[posFrom[1]][posFrom[0]];
+        if(pieceFrom.checkMove(posTo[1],posTo[0]))
         {
-            pieces[posFromY][posFromX] = null;
-            pieces[posToY][posToX] = pieceFrom;
+            pieces[posFrom[1]][posFrom[0]] = null;
+            pieces[posTo[1]][posTo[0]] = pieceFrom;
             return true;
         }
         return false;

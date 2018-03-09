@@ -4,7 +4,8 @@ public class Main {
 
     public static void main(String[] args) {
 	    Board board = new Board();
-	    board.move(2,0,4,5);
+        Player p1 = Player.createPlayer("Erit");
+        Player p2 = Player.createPlayer("Skevo");
         System.out.println(board);
     }
 }
