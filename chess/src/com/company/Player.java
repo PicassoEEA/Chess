@@ -47,4 +47,8 @@ public class Player {
 
         return output;
     }
+
+    public String toString(){ //by eric
+        return name;
+    }
 }
