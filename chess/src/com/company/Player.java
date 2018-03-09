@@ -19,15 +19,15 @@ public class Player {
             throw new Error ("too many players");
     }
 
-    public String getName(){
+    public String getName(){ // by eric
         return name;
     }
 
-    public void move(String startPosition, String endPosition){
-
+    public void move(String startPosition, String endPosition){ //by eric
+        Board.move(str2Index(startPosition),str2Index(endPosition));
     }
 
-    private int[] Str2Index(String str){
+    private int[] str2Index(String str){ //by eric
         char char1 = str.substring(0,1).toCharArray()[0];
         char char2 = str.substring(1,2).toCharArray()[0];
         int index1 = 0;
