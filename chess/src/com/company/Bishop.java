@@ -36,4 +36,5 @@ public class Bishop extends Piece {
                 numOfWhitePieces -= 1;
         }
     }
+    public static 
 }
