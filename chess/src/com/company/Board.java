@@ -44,7 +44,7 @@ public class Board {
     public String toString(){
         String output = "";
         for (int i = 0 ; i < pieces.length ; i++){
-            output += i + "  ";
+            output += 8-i + "  ";
             for (int j = 0 ; j < pieces[0].length ; j++){
                 if (pieces[i][j] == null)
                     output += "    ";
