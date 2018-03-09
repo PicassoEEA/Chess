@@ -2,6 +2,10 @@ package com.company;
 
 public abstract class Piece {
     public abstract String toString();
+    public static boolean checkMove(int posX, int posY)// Steevo created
+    {
+        return true;
+    }
     public static Piece create(String pieceName, boolean isBlack) //Stevo created
     {
         switch(pieceName)

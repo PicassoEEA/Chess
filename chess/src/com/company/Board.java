@@ -65,7 +65,7 @@ public class Board {
         System.out.println(toString());
     }
 
-    private String num2Alpha(int num){
+    private String num2Alpha(int num) {
         if (num == 0) return "A";
         else if (num == 1) return "B";
         else if (num == 2) return "C";
@@ -75,7 +75,17 @@ public class Board {
         else if (num == 6) return "G";
         else return "H";
     }
-
+    public boolean move(int posFromX, int posFromY, int posToX, int posToY)//Stevo created
+    {
+        Piece pieceFrom = pieces[posFromY][posFromX];
+        if(pieceFrom.checkMove(posToX,posToY))
+        {
+            pieces[posFromX][posFromY] = null;
+            pieces[posToY][posToX] = pieceFrom;
+            return true;
+        }
+        return false;
+    }
 }
 
 
