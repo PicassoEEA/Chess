@@ -41,9 +41,11 @@ public class Player {
         index1 = ((int) char1) - 65;
         index2 = ((int) char2) - 48 - 1;
 
+        index2 = 7 - index2;
+
         int[] output = new int[2];
         output[0] = index1;
-        output[1] = 8 - index2;
+        output[1] = index2;
 
         return output;
     }
