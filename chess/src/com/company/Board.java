@@ -80,7 +80,7 @@ public class Board {
         Piece pieceFrom = pieces[posFromY][posFromX];
         if(pieceFrom.checkMove(posToX,posToY))
         {
-            pieces[posFromX][posFromY] = null;
+            pieces[posFromY][posFromX] = null;
             pieces[posToY][posToX] = pieceFrom;
             return true;
         }
