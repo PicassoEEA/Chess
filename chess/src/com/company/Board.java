@@ -61,10 +61,6 @@ public class Board {
         return output;
     }
 
-    public void main(){
-        System.out.println(toString());
-    }
-
     private String num2Alpha(int num) {
         if (num == 0) return "A";
         else if (num == 1) return "B";
