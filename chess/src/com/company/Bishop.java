@@ -1,5 +1,5 @@
 package com.company;
-import Math.abs;
+//import Math.abs;
 
 public class Bishop extends Piece {
     public boolean isBlack;// false for white and true for black
