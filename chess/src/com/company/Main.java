@@ -8,7 +8,7 @@ public class Main {
         Player p2 = Player.createPlayer("Skevo");
         int[] arr = {1,2};
         int[] arr2 = {4,5};
-        p2.move("A1","C5");
+        p2.move("A1","E8");
         p1.move("A2","D5");
         System.out.println(board);
     }
