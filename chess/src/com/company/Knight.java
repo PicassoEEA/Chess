@@ -36,7 +36,7 @@ public class Knight extends Piece{
                 numOfWhitePieces -= 1;
         }
     }
-    public static boolean RookMove(int[] startPos, int[] endPos){ //created by eric at 5.9 18:04 edit: bug fixed by Stevo 3.13
+    public static boolean checkMove(int[] startPos, int[] endPos){ //created by eric at 5.9 18:04 edit: bug fixed by Stevo 3.13
         if (Math.abs(endPos[0] - startPos[0]) = 1 || Math.abs(endtPos[1] - startPos[1]) = 1)
             return true;
         else
