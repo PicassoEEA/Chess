@@ -73,19 +73,24 @@ public class Board {
         else if (num == 4) return "E";
         else if (num == 5) return "F";
         else if (num == 6) return "G";
-        else return "H";}
+        else if (num ==7) return"H";}
     public static boolean move(int[] posFrom, int[] posTo)//Stevo created ,stevo and Luvin modified
     {
 
         Piece pieceFrom = pieces[posFrom[1]][posFrom[0]];
+
         if(pieceFrom.checkMove(posFrom,posTo))
         {
+            if (posTo[1]>7||posTo[0]>7){
+                return false;
+            }
             pieces[posFrom[1]][posFrom[0]] = null;
             pieces[posTo[1]][posTo[0]] = pieceFrom;
             return true;
         }
         return false;
     }
+
 
 }
 

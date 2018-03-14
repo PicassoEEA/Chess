@@ -18,7 +18,6 @@ public class Player {
         else
             throw new Error ("too many players");
     }
-
     public String getName(){ // by eric
         return name;
     }
