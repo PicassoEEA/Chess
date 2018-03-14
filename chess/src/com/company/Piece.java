@@ -55,9 +55,9 @@ public abstract class Piece {
                         return rook;
                     }
                     else {
-                        Knight knight = new Knight(isBlack);
+                        Rook rook = new Rook(isBlack);
                         Rook.changePieceNum(isBlack,true);
-                        return knight;
+                        return rook;
                     }
                 }
                 else throw new Error("created too many Rooks. Rooks = "+String.valueOf(Rook.getPieceNum(isBlack)));
