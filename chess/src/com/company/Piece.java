@@ -2,7 +2,7 @@ package com.company;
 
 public abstract class Piece {
     public abstract String toString();
-    public abstract boolean checkMove(int[] startPos, int[] endPos)// Steevo created, Mar14 10:21 Stevo modified
+    public abstract boolean checkMove(int[] startPos, int[] endPos);// Steevo created, Mar14 10:21 Stevo modified
     public static Piece create(String pieceName, boolean isBlack) //Stevo created
     {
         switch(pieceName)
