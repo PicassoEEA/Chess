@@ -75,7 +75,6 @@ public class Board {
         else if (num == 6) return "G";
         else return "H";
     }
-    public static boolean move(int[] posFrom, int[] posTo)//Stevo created ,stevo modified
     public static boolean move(int[] posFrom, int[] posTo)//Stevo created ,stevo and Luvin modified
     {
 
