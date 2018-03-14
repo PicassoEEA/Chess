@@ -23,8 +23,13 @@ public class Player {
         return name;
     }
 
-    public void move(String startPosition, String endPosition){ //by eric
-        Board.move(str2Index(startPosition),str2Index(endPosition));
+    public boolean move(String startPosition, String endPosition){ //by eric & luvin
+        if(startPosition.equals(endPosition))
+            return false;
+        else{
+            Board.move(str2Index(startPosition),str2Index(endPosition));
+            return true;}
+
     }
 
     private int[] str2Index(String str){ //by eric

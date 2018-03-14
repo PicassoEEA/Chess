@@ -73,15 +73,11 @@ public class Board {
         else if (num == 4) return "E";
         else if (num == 5) return "F";
         else if (num == 6) return "G";
-        else return "H";
-    }
-    public static boolean move(int[] posFrom, int[] posTo)//Stevo created ,stevo modified
+        else return "H";}
     public static boolean move(int[] posFrom, int[] posTo)//Stevo created ,stevo and Luvin modified
     {
 
         Piece pieceFrom = pieces[posFrom[1]][posFrom[0]];
-        if(posFrom[0]==posTo[0] &&posFrom[1]==posTo[1])
-            return false;
         if(pieceFrom.checkMove(posFrom,posTo))
         {
             pieces[posFrom[1]][posFrom[0]] = null;
