@@ -73,12 +73,7 @@ public class Board {
         else if (num == 4) return "E";
         else if (num == 5) return "F";
         else if (num == 6) return "G";
-<<<<<<< HEAD
         else return "H";}
-=======
-        else return "H";
-    }
->>>>>>> 0c4137edd2c0485ce25b04eb5f5dd96cf9cddd72
     public static boolean move(int[] posFrom, int[] posTo)//Stevo created ,stevo and Luvin modified
     {
 
