@@ -36,4 +36,10 @@ public class Knight extends Piece{
                 numOfWhitePieces -= 1;
         }
     }
+    public boolean checkMove(int[] startPos, int[] endPos){ //created by eric at 5.9 18:04 edit: bug fixed by Stevo 3.13
+        if (endPos[0] + endPos[1] == 5 && endPos[0] * endPos[1] == 6)
+            return true;
+        else
+            return false;
+    }
 }

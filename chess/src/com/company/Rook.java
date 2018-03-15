@@ -35,4 +35,11 @@ public class Rook extends Piece{
                 numOfWhitePieces -= 1;
         }
     }
+    public boolean checkMove(int[] startPos, int[] endPos){ //created by eric at 5.9 18:04 edit: bug fixed by Stevo 3.13
+        if (startPos[0] == endPos[0] || startPos[1] == endPos[1])
+            return true;
+        else
+            return false;
+    }
 }
+
