@@ -5,7 +5,7 @@ public class Pawn extends Piece {
     protected static int numOfWhitePieces = 0;
     protected static int numOfBlackPieces = 0;
     public boolean isBlack;// false for white and true for black
-
+    static int step=0;
     protected Pawn (boolean isBlack){
         this.isBlack = isBlack;
     }
@@ -36,5 +36,25 @@ public class Pawn extends Piece {
             else
                 numOfWhitePieces -= 1;
         }
+    }
+    public static boolean checkMove(int[] startPos, int[] endPos){
+
+
+        if(endPos[0]-startPos[0]==1 ||endPos[1]-startPos[1]==1 ||startPos[0]-endPos[0]==1){
+            step++;
+            return true;
+        }
+        else if(endPos[1]-startPos[1]==2 &&step==0){
+            step++;
+            return true;
+
+        }
+        else if(Math.abs(startPos[0] - endPos[0]) ==1&& Math.abs(startPos[1] - endPos[1])==1 &&){
+
+
+        }
+        else{
+            return false;
+    }
     }
 }
