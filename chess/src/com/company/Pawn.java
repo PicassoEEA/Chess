@@ -43,7 +43,7 @@ public class Pawn extends Piece {
             return false;
         else
             return true;
-        if(frontView[0] == null||frontView[1] == null)
+        if(frontView[0] == null||frontView[2] == null)
             return false;
         else
             return true;
