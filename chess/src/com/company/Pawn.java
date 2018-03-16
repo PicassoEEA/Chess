@@ -37,7 +37,7 @@ public class Pawn extends Piece {
                 numOfWhitePieces -= 1;
         }
     }
-    public static boolean checkMove(int[] startPos, int[] endPos){
+    public boolean checkMove(int[] startPos, int[] endPos){
 
 
         if(endPos[0]-startPos[0]==1 ||endPos[1]-startPos[1]==1 ||startPos[0]-endPos[0]==1){
