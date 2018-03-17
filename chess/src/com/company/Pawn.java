@@ -38,16 +38,12 @@ public class Pawn extends Piece {
         }
     }
     public boolean checkMove(int[] startPos, int[] endPos){ //Luvin created Stevo modified
-        Piece[] frontView = Board.getView(startPos,endPos,);
-        if(frontView[1] != null)
+        Piece[] frontView = Board.getView(startPos,isBlack);
+        if(frontView[1] != null||frontView[0] == null||frontView[2] == null)
             return false;
         else
             return true;
-        if(frontView[0] == null||frontView[2] == null)
-            return false;
-        else
-            return true;
-    }
+        }
     public static void main(String[] args) {
 
     }
