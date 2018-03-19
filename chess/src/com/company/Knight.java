@@ -37,7 +37,9 @@ public class Knight extends Piece{
         }
     }
     public boolean checkMove(int[] startPos, int[] endPos){ //created by jeremy
-        if (Math.abs(endPos[0]) + Math.abs(endPos[1]) == 5 && Math.abs(endPos[0]) * Math.abs(endPos[1]) == 6)
+        int horizontalDistance = Math.abs(startPos[0] - endPos[0]) + 1;
+        int verticalDistance = Math.abs(startPos[1] - endPos[1]) + 1;
+        if (horizontalDistance + verticalDistance == 5 && horizontalDistance * verticalDistance == 6)
             return true;
         else
             return false;
