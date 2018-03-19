@@ -37,24 +37,14 @@ public class Pawn extends Piece {
                 numOfWhitePieces -= 1;
         }
     }
-    public static boolean checkMove(int[] startPos, int[] endPos){
-
-
-        if(endPos[0]-startPos[0]==1 ||endPos[1]-startPos[1]==1 ||startPos[0]-endPos[0]==1){
-            step++;
-            return true;
-        }
-        else if(endPos[1]-startPos[1]==2 &&step==0){
-            step++;
-            return true;
-
-        }
-        else if(Math.abs(startPos[0] - endPos[0]) ==1&& Math.abs(startPos[1] - endPos[1])==1 &&){
-
-
-        }
-        else{
+    public boolean checkMove(int[] startPos, int[] endPos){ //Luvin created Stevo modified
+        Piece[] frontView = Board.getView(startPos,isBlack);
+        if(frontView[1] != null||frontView[0] == null||frontView[2] == null)
             return false;
-    }
+        else
+            return true;
+        }
+    public static void main(String[] args) {
+
     }
 }
