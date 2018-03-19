@@ -7,11 +7,10 @@ public class Main {
         Player p1 = Player.createPlayer("Erit");
         Player p2 = Player.createPlayer("Skevo");
         p2.move("A1","C5");
+        int[] arr = {1,2};
+        int[] arr2 = {4,5};
         p2.move("A1","E8");
-        p2.move("C2","E8");
-        p2.move("H2","C3");
-        p2.move("A7","A6");
-        p2.move("B1","A3");
+        p1.move("A2","D5");
         System.out.println(board);
     }
 }
