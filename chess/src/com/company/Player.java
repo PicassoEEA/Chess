@@ -3,7 +3,7 @@ package com.company;
 public class Player {
     private String name = null;
     private static int numOfPlayers = 0;
-
+    public int colorOfPlayer=0;
 
 
     private Player(String name){
@@ -13,6 +13,7 @@ public class Player {
         if (numOfPlayers <= 2){
             Player player = new Player(name);
             numOfPlayers ++;
+            player.colorOfPlayer=numOfPlayers-1;
             return player;
         }
         else
@@ -27,11 +28,29 @@ public class Player {
         if(startPosition.equals(endPosition))
             return false;
         else{
-            Board.move(str2Index(startPosition),str2Index(endPosition));
-            return true;}
+
+            if(selfOrNot(Board.pieces[str2Index(startPosition)[0]][str2Index(startPosition)[1]]))
+            {
+                Board.move(str2Index(startPosition),str2Index(endPosition));
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
 
     }
+    private boolean selfOrNot(Piece p1)
+    {
+        if(p1.colorOfPiece==colorOfPlayer)
+        {
+            return true;
+        }
+        else if(p1.colorOfPiece!=colorOfPlayer){
+            return false;
 
+        }
+    }
     private int[] str2Index(String str){ //by eric
         char char1 = str.substring(0,1).toCharArray()[0];
         char char2 = str.substring(1,2).toCharArray()[0];
