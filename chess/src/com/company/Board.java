@@ -86,6 +86,18 @@ public class Board {
         }
         return false;
     }
+    public static Piece[] getView(int index[], boolean isBlack){
+        int row = 0;
+        if(isBlack)
+            row = 1;
+        else
+            row = -1;
+        Piece output[] = new Piece[3];
+        output[2] = pieces[index[0] + row][index[1] - 1];
+        output[1] = pieces[index[0] + row][index[1]];
+        output[0] = pieces[index[0] + row][index[1] + 1];
+        return output;
+    }
 
 }
 
