@@ -42,11 +42,11 @@ public class Player {
     }
     private boolean selfOrNot(Piece p1)
     {
-        if(p1.colorOfPiece==colorOfPlayer)
+        if(p1.isBlack==isBlack)
         {
             return true;
         }
-        else if(p1.colorOfPiece!=colorOfPlayer){
+        else if(!p1.isBlack==isBlack){
             return false;
 
         }

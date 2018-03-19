@@ -6,14 +6,14 @@ public class Board {
     public Board()
     {
         //Black piece row
-        pieces[0][0] = Piece.create("Rook",true,0);
-        pieces[0][1] = Piece.create("Knight",true,0);
-        pieces[0][2] = Piece.create("Bishop",true,0);
-        pieces[0][3] = Piece.create("Queen",true,0);
-        pieces[0][4] = Piece.create("King",true,0);
-        pieces[0][5] = Piece.create("Bishop",true,0);
-        pieces[0][6] = Piece.create("Knight",true,0);
-        pieces[0][7] = Piece.create("Rook",true,0);
+        pieces[0][0] = Piece.create("Rook",true);
+        pieces[0][1] = Piece.create("Knight",true);
+        pieces[0][2] = Piece.create("Bishop",true);
+        pieces[0][3] = Piece.create("Queen",true);
+        pieces[0][4] = Piece.create("King",true);
+        pieces[0][5] = Piece.create("Bishop",true);
+        pieces[0][6] = Piece.create("Knight",true);
+        pieces[0][7] = Piece.create("Rook",true);
 
         //Black pawn row
         for(int i = 0;i < pieces.length ; i++)

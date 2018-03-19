@@ -3,8 +3,8 @@ package com.company;
 public abstract class Piece {
     public abstract String toString();
     public abstract boolean checkMove(int[] startPos, int[] endPos);// Steevo created, Mar14 10:21 Stevo modified
-    public int colorOfpiece;
-    public static Piece create(String pieceName, boolean isBlack,int colorOfpiece) //Stevo ,Luvin modified
+    public int coloOfpiece r;
+    public static Piece create(String pieceName, boolean isBlack,int colorOfpiece) //Stevo created
     {
         switch(pieceName)
         {
