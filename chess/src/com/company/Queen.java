@@ -37,7 +37,9 @@ public class Queen extends Piece{
         }
     }
     public boolean checkMove(int[] startPos, int[] endPos){ //created by jeremy
-        if (startPos[0] == endPos[0] || startPos[1] == endPos[1] || Math.abs(startPos[0] - endPos[0]) == Math.abs(startPos[1] - endPos[1]))
+        double distance1 = Math.sqrt((Math.abs(endPos[0] - startPos[0])));
+        double distance2 = Math.sqrt((Math.abs(endPos[1] - startPos[1])));
+        if (startPos[0] == endPos[0] || startPos[1] == endPos[1] || distance1 == distance2)
             return true;
         else
             return false;
