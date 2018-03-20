@@ -4,7 +4,7 @@ public class Player {
     private String name = null;
     private static int numOfPlayers = 0;
     public int colorOfPlayer=0;
-
+    public boolean isBlack;
 
     private Player(String name){
         this.name = name;
@@ -42,11 +42,11 @@ public class Player {
     }
     private boolean selfOrNot(Piece p1)
     {
-        if(p1.isBlack==isBlack)
+        if(p1.returnTheColor()==isBlack)
         {
             return true;
         }
-        else if(!p1.isBlack==isBlack){
+        else if(!p1.returnTheColor()==isBlack){
             return false;
 
         }
