@@ -27,16 +27,16 @@ public class Board {
 
         //White pawn row
         for(int i = 0;i < pieces.length ; i++)
-            pieces[6][i] = Piece.create("Pawn",false,1);
+            pieces[6][i] = Piece.create("Pawn",false);
         //White piece row
-        pieces[7][0] = Piece.create("Rook",false,1);
-        pieces[7][1] = Piece.create("Knight",false,1);
-        pieces[7][2] = Piece.create("Bishop",false,1);
-        pieces[7][4] = Piece.create("Queen",false,1);
-        pieces[7][3] = Piece.create("King",false,1);
-        pieces[7][5] = Piece.create("Bishop",false,1);
-        pieces[7][6] = Piece.create("Knight",false,1);
-        pieces[7][7] = Piece.create("Rook",false,1);
+        pieces[7][0] = Piece.create("Rook",false);
+        pieces[7][1] = Piece.create("Knight",false);
+        pieces[7][2] = Piece.create("Bishop",false);
+        pieces[7][4] = Piece.create("Queen",false);
+        pieces[7][3] = Piece.create("King",false);
+        pieces[7][5] = Piece.create("Bishop",false);
+        pieces[7][6] = Piece.create("Knight",false);
+        pieces[7][7] = Piece.create("Rook",false);
     }
 
 

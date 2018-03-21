@@ -29,18 +29,18 @@ public class Player {
             return false;
         else{
 
-            if(selfOrNot(Board.pieces[str2Index(startPosition)[0]][str2Index(startPosition)[1]]))
+            /*if(selfOrNot(Board.pieces[str2Index(startPosition)[0]][str2Index(startPosition)[1]]))
             {
                 Board.move(str2Index(startPosition),str2Index(endPosition));
                 return true;
             }
-            else {
+            else {*/
                 return false;
             }
         }
 
-    }
-    private boolean selfOrNot(Piece p1)
+    //}
+    /*private boolean selfOrNot(Piece p1)
     {
         if(p1.returnTheColor()==isBlack)
         {
@@ -50,7 +50,7 @@ public class Player {
             return false;
 
         }
-    }
+    }*/
     private int[] str2Index(String str){ //by eric
         char char1 = str.substring(0,1).toCharArray()[0];
         char char2 = str.substring(1,2).toCharArray()[0];
