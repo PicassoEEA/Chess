@@ -93,9 +93,9 @@ public class Board {
         else
             row = -1;
         Piece output[] = new Piece[3];
-        output[2] = pieces[index[0] + row][index[1] - 1];
-        output[1] = pieces[index[0] + row][index[1]];
-        output[0] = pieces[index[0] + row][index[1] + 1];
+        output[2] = pieces[index[1] + row][index[0] - 1];
+        output[1] = pieces[index[1] + row][index[0]];
+        output[0] = pieces[index[1] + row][index[0] + 1];
         return output;
     }
 
