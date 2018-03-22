@@ -73,6 +73,15 @@ public class Player {
 
         return output;
     }
+    public boolean selfOrNot(com.company.Piece p1){
+        if(isBlack==p1.returnTheColor()){
+            return true;
+        }
+        else {
+            return false;
+        }
+
+    }
 
     public String toString(){ //by eric
         return name;
