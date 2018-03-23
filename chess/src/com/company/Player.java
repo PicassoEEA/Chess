@@ -28,7 +28,6 @@ public class Player {
         if(startPosition.equals(endPosition))
             return false;
         else{
-
             /*if(selfOrNot(Board.pieces[str2Index(startPosition)[0]][str2Index(startPosition)[1]]))
             {
                 Board.move(str2Index(startPosition),str2Index(endPosition));
