@@ -24,33 +24,27 @@ public class Player {
         return name;
     }
 
-    public boolean move(String startPosition, String endPosition){ //by eric & luvin
+    public boolean move(String startPosition, String endPosition)
+    { //by eric & luvin * bug fixed by Steeevo
         if(startPosition.equals(endPosition))
             return false;
-        else{
-
-            /*if(selfOrNot(Board.pieces[str2Index(startPosition)[0]][str2Index(startPosition)[1]]))
-            {
-                Board.move(str2Index(startPosition),str2Index(endPosition));
-                return true;
-            }
-            else {*/
-                return false;
-            }
-        }
-
-    //}
-    /*private boolean selfOrNot(Piece p1)
-    {
-        if(p1.returnTheColor()==isBlack)
+        else
         {
-            return true;
+            int[] startPosArr = str2Index(startPosition);
+            int[] endPosArr = str2Index(endPosition);
+            if(selfOrNot(startPosArr))
+            {
+                if(!eatSelf(endPosArr))
+                {
+                    Board.move(startPosArr,endPosArr);
+                    return true;
+                }
+            }
+            else
+                return false;
         }
-        else if(!p1.returnTheColor()==isBlack){
-            return false;
+    }
 
-        }
-    }*/
     private int[] str2Index(String str){ //by eric
         char char1 = str.substring(0,1).toCharArray()[0];
         char char2 = str.substring(1,2).toCharArray()[0];
@@ -73,8 +67,8 @@ public class Player {
 
         return output;
     }
-    public boolean selfOrNot(com.company.Piece p1){
-        if(isBlack==p1.returnTheColor()){
+    public boolean selfOrNot(Piece piece){ // Luvin create
+        if(isBlack==piece.returnTheColor()){
             return true;
         }
         else {
