@@ -29,4 +29,4 @@ dependency-reduced-pom.xml
 *.iws 
 *.idea 
 *.class
-chess/src/com/company/Pawn.java
+
