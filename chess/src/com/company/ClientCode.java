@@ -17,7 +17,11 @@ public class ClientCode {
         while(!(inputLine.equals("quit"))){
             System.out.println(board);
             System.out.print(whitePlayer + "'s move : ");
-
+            String[] move = seperater(scanner.nextLine());
+            whitePlayer.move(move[0],move[1]);
+            System.out.print(blackPlayer + "'s move : ");
+            move = seperater(scanner.nextLine());
+            blackPlayer.move(move[0],move[1]);
         }
 
     }

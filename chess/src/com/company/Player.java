@@ -28,16 +28,12 @@ public class Player {
     { //by eric & luvin * bug fixed by Steeevo
         if(startPosition.equals(endPosition))
             return false;
-<<<<<<< HEAD
-        else{
-            /*if(selfOrNot(Board.pieces[str2Index(startPosition)[0]][str2Index(startPosition)[1]]))
-=======
+
         else
         {
             int[] startPosArr = str2Index(startPosition);
             int[] endPosArr = str2Index(endPosition);
             if(selfOrNot(startPosArr))
->>>>>>> e46e2991825b6b0bfd08ca3ca10560c3ae6f9ec4
             {
                 if(!eatSelf(endPosArr))
                 {
