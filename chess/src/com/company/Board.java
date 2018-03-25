@@ -102,6 +102,8 @@ public class Board {
     }
 
     private static boolean clearPath(int[] posFrom, int[] posTo){//check if the path is clear ; by eric
+        if (pieces[posFrom[1]][posFrom[0]] instanceof Knight)
+            return true;
         int xDirection = 0;
         int yDirection = 0;
         int distance = 0;
