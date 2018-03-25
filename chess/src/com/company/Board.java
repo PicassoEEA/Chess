@@ -105,25 +105,27 @@ public class Board {
         int xDirection = 0;
         int yDirection = 0;
         int distance = 0;
-        int[] currentPostion = posFrom;
+        int[] currentPostion = new int[2];
+        currentPostion[0] = posFrom[0];
+        currentPostion[1] = posFrom[1];
 
-        if (posFrom[1] > posTo[1])
+        if (posFrom[0]> posTo[0])
             xDirection = -1;
-        else if (posFrom[1] < posTo[1])
-            xDirection = 1;
-        if (posFrom[0] > posTo[0])
-            yDirection = -1;
         else if (posFrom[0] < posTo[0])
+            xDirection = 1;
+        if (posFrom[1] > posTo[1])
+            yDirection = -1;
+        else if (posFrom[1] < posTo[1])
             yDirection = 1;
 
-        distance = posFrom[0] - posTo[0];
-        if (posFrom[1] - posTo[1] > distance)
-            distance = posFrom[1] - posTo[1];
+        distance = Math.abs(posFrom[0] - posTo[0]);
+        if (Math.abs(posFrom[1] - posTo[1]) > distance)
+            distance = Math.abs(posFrom[1] - posTo[1]);
 
         for (int i = 0; i< distance - 1; i ++){
-            currentPostion[1] = currentPostion[1] + xDirection;
-            currentPostion[0] = currentPostion[0] + yDirection;
-            if (pieces[currentPostion[1]][currentPostion[0]]  == null)
+            currentPostion[1] = currentPostion[1] + yDirection;
+            currentPostion[0] = currentPostion[0] + xDirection;
+            if (pieces[currentPostion[1]][currentPostion[0]]  != null)
                 return false;
         }
         return true;
