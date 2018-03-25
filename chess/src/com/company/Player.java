@@ -6,6 +6,7 @@ public class Player {
     public int colorOfPlayer=0;
     public boolean isBlack;
 
+
     private Player(String name){
         this.name = name;
     }
@@ -33,16 +34,16 @@ public class Player {
         {
             int[] startPosArr = str2Index(startPosition);
             int[] endPosArr = str2Index(endPosition);
-            if(selfOrNot(startPosArr))
-            {
-                if(!eatSelf(endPosArr))
-                {
+            //if(selfOrNot())
+            //{
+                //if(!eatSelf(endPosArr))
+                //{
                     Board.move(startPosArr,endPosArr);
                     return true;
-                }
-            }
-            else
-                return false;
+                //}
+            //}
+            //else
+                //return false;
         }
     }
 
