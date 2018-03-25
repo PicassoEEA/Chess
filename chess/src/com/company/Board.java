@@ -78,7 +78,7 @@ public class Board {
     {
 
         Piece pieceFrom = pieces[posFrom[1]][posFrom[0]];
-        if(pieceFrom.checkMove(posFrom,posTo))
+        if(pieceFrom.checkMove(posFrom,posTo) && clearPath(posFrom,posTo))
         {
             pieces[posFrom[1]][posFrom[0]] = null;
             pieces[posTo[1]][posTo[0]] = pieceFrom;
@@ -97,6 +97,34 @@ public class Board {
         output[1] = pieces[index[1] + row][index[0]];
         output[0] = pieces[index[1] + row][index[0] + 1];
         return output;
+    }
+
+    private static boolean clearPath(int[] posFrom, int[] posTo){//check if the path is clear ; by eric
+        int xDirection = 0;
+        int yDirection = 0;
+        int distance = 0;
+        int[] currentPostion = posFrom;
+
+        if (posFrom[1] > posTo[1])
+            xDirection = -1;
+        else if (posFrom[1] < posTo[1])
+            xDirection = 1;
+        if (posFrom[0] > posTo[0])
+            yDirection = -1;
+        else if (posFrom[0] < posTo[0])
+            yDirection = 1;
+
+        distance = posFrom[0] - posTo[0];
+        if (posFrom[1] - posTo[1] > distance)
+            distance = posFrom[1] - posTo[1];
+
+        for (int i = 0; i< distance - 1; i ++){
+            currentPostion[1] = currentPostion[1] + xDirection;
+            currentPostion[0] = currentPostion[0] + yDirection;
+            if (pieces[currentPostion[1]][currentPostion[0]]  == null)
+                return false;
+        }
+        return true;
     }
 
 }
