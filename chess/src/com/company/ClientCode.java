@@ -14,14 +14,22 @@ public class ClientCode {
         blackPlayer = Player.createPlayer(scanner.nextLine());
 
         String inputLine = "";
+        String[] move = null;
         while(!(inputLine.equals("quit"))){
-            System.out.println(board);
-            System.out.print(whitePlayer + "'s move : ");
-            String[] move = seperater(scanner.nextLine());
-            whitePlayer.move(move[0],move[1]);
-            System.out.print(blackPlayer + "'s move : ");
-            move = seperater(scanner.nextLine());
-            blackPlayer.move(move[0],move[1]);
+            try {
+                System.out.println(board);
+                System.out.print(whitePlayer + "'s move : ");
+                move = seperater(scanner.nextLine());
+                whitePlayer.move(move[0], move[1]);
+                System.out.println(board);
+                System.out.print(blackPlayer + "'s move : ");
+                move = seperater(scanner.nextLine());
+                blackPlayer.move(move[0], move[1]);
+            }
+            catch(StringIndexOutOfBoundsException i){
+                System.out.println("already quit");
+                break;
+            }
         }
 
     }
@@ -29,12 +37,15 @@ public class ClientCode {
         String[] seperateString = new String[2];
         int positionOfcomma = 0;
         for(int i = 0; i < input.length(); i ++){
-            if(input.substring(i,i + 1) == ","){
+            /*if(input.substring(i,i + 1) == ","){
                  seperateString[positionOfcomma ] = input.substring(positionOfcomma );
                  seperateString[positionOfcomma + 1 ] = input.substring(positionOfcomma + 1,input.length() );
-            }
-
+            }*/
+            if (input.substring(i,i+1).equals(","))
+                positionOfcomma = i;
         }
+            seperateString[0] = input.substring(0,positionOfcomma);
+            seperateString[1] = input.substring(positionOfcomma + 1,input.length() );
         return seperateString;
     }
 
