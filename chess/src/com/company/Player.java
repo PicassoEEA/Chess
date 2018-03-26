@@ -7,14 +7,20 @@ public class Player {
     public boolean isBlack;
 
 
-    private Player(String name){
+    private Player(String name, boolean isBlack){
         this.name = name;
+        this.isBlack = isBlack;
     }
-    public static Player createPlayer(String name){
-        if (numOfPlayers <= 2){
-            Player player = new Player(name);
-            numOfPlayers ++;
-            player.colorOfPlayer=numOfPlayers-1;
+    public static Player createPlayer(String name){ // steven modified
+        if (numOfPlayers < 1) {
+            Player player = new Player(name, false);
+            numOfPlayers++;
+            return player;
+        }
+        else if (numOfPlayers < 2)
+        {
+            Player player = new Player(name, true);
+            numOfPlayers++;
             return player;
         }
         else
@@ -34,16 +40,13 @@ public class Player {
         {
             int[] startPosArr = str2Index(startPosition);
             int[] endPosArr = str2Index(endPosition);
-            //if(selfOrNot())
-            //{
-                //if(!eatSelf(endPosArr))
-                //{
-                    Board.move(startPosArr,endPosArr);
-                    return true;
-                //}
-            //}
-            //else
-                //return false;
+            if(selfOrNot(Board.getPiece(startPosArr[0],startPosArr[1]))) {
+                Board.move(startPosArr, endPosArr);
+                return true;
+            }
+            else
+                return false;
+
         }
     }
 
@@ -69,7 +72,7 @@ public class Player {
 
         return output;
     }
-    public boolean selfOrNot(Piece piece){ // Luvin create
+    public boolean selfOrNot(Piece piece){ // Luvin create , stevo modified
         if(isBlack==piece.returnTheColor()){
             return true;
         }
