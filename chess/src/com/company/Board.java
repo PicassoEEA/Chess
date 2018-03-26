@@ -96,7 +96,7 @@ public class Board {
         if (index[0] != 0)
         output[2] = pieces[index[1] + row][index[0] - 1];
         output[1] = pieces[index[1] + row][index[0]];
-        if (index[0] != 8)
+        if (index[0] != 7)
         output[0] = pieces[index[1] + row][index[0] + 1];
         return output;
     }
