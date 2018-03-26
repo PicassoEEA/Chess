@@ -20,11 +20,20 @@ public class ClientCode {
                 System.out.println(board);
                 System.out.print(whitePlayer + "'s move : ");
                 move = seperater(scanner.nextLine());
-                whitePlayer.move(move[0], move[1]);
+                while(!whitePlayer.move(move[0], move[1]))
+                {
+                    System.out.println("illegal move, please enter again");
+                    System.out.print(whitePlayer + "'s move : ");
+                    move = seperater(scanner.nextLine());
+                }
                 System.out.println(board);
                 System.out.print(blackPlayer + "'s move : ");
                 move = seperater(scanner.nextLine());
-                blackPlayer.move(move[0], move[1]);
+                while(!blackPlayer.move(move[0], move[1])) {
+                    System.out.println("illegal move, please enter again");
+                    System.out.print(blackPlayer + "'s move : ");
+                    move = seperater(scanner.nextLine());
+                }
             }
             catch(StringIndexOutOfBoundsException i){
                 System.out.println("already quit");
