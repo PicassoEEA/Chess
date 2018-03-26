@@ -29,16 +29,16 @@ public abstract class Piece {
             {
                 if(Knight.getPieceNum(false) <= 2)
                 {
-                    if(isBlack) {
+                    //if(isBlack) {
                         Knight knight = new Knight(isBlack);
                         Knight.changePieceNum(isBlack,true);
                         return knight;
-                    }
-                    else {
+                    //}
+                    /*else {
                         Knight knight = new Knight(isBlack);
                         Knight.changePieceNum(isBlack,true);
-                        return knight;
-                    }
+                        return knight;*/
+                    //}
                 }
                 else throw new Error("created too many Knights. Knights = "+String.valueOf(Knight.getPieceNum(isBlack)));
                 //break;

@@ -3,7 +3,7 @@ package com.company;
 public class Knight extends Piece{
     protected static int numOfWhitePieces = 0;
     protected static int numOfBlackPieces = 0;
-    public static boolean isBlack;// false for white and true for black
+    public boolean isBlack;// false for white and true for black
 
     protected Knight (boolean isBlack){
         this.isBlack = isBlack;

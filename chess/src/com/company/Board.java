@@ -132,7 +132,7 @@ public class Board {
         }
         return true;
     }
-    public static Piece getPiece(int x,int y) {return(pieces[x][y]);} //steven created
+    public static Piece getPiece(int x,int y) {return(pieces[y][x]);} //steven created
 }
 
 

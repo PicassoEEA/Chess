@@ -14,7 +14,7 @@ public class Main {
         p2.move("H2","C3");
         p2.move("A7","A6");
         p2.move("B1","A3");*/
-        p2.move("A1","A6");
+        p2.move("B8","A6");
         System.out.println(board);
     }
 }
