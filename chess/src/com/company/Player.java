@@ -3,7 +3,6 @@ package com.company;
 public class Player {
     private String name = null;
     private static int numOfPlayers = 0;
-    public int colorOfPlayer=0;
     public boolean isBlack;
 
 
@@ -73,7 +72,7 @@ public class Player {
         return output;
     }
     public boolean selfOrNot(Piece piece){ // Luvin create , stevo modified
-        if(isBlack==piece.returnTheColor()){
+        if(isBlack==piece.checkIsBlack()){
             return true;
         }
         else {
