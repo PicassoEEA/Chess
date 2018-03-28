@@ -84,4 +84,7 @@ public class Pawn extends Piece {
         }
         return false;
     }
+    public boolean checkIsBlack(){
+        return isBlack;
+    }
 }

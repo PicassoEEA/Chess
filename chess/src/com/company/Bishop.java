@@ -43,4 +43,7 @@ public class Bishop extends Piece {
         else
             return false;
     }
+    public boolean checkIsBlack(){
+        return isBlack;
+    }
 }

@@ -40,5 +40,9 @@ public class King extends Piece {
             return true;
         else
             return false;
+
+    }
+    public boolean checkIsBlack(){
+        return isBlack;
     }
 }
