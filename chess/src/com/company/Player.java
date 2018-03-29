@@ -3,7 +3,7 @@ package com.company;
 public class Player {
     private String name = null;
     private static int numOfPlayers = 0;
-    public boolean isBlack;
+    private boolean isBlack;
 
 
     private Player(String name, boolean isBlack){
