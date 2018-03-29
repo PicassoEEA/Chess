@@ -2,7 +2,7 @@ package com.company;
 //import Math.abs;
 
 public class Bishop extends Piece {
-    public boolean isBlack;// false for white and true for black
+    private boolean isBlack;// false for white and true for black
     protected static int numOfWhitePieces = 0;
     protected static int numOfBlackPieces = 0;
 

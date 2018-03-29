@@ -5,7 +5,7 @@ public class Pawn extends Piece {
     protected static int numOfWhitePieces = 0;
     protected static int numOfBlackPieces = 0;
     private boolean moved = false;
-    public boolean isBlack;// false for white and true for black
+    private boolean isBlack;// false for white and true for black
     //static int step = 0;
 
     protected Pawn(boolean isBlack) {
