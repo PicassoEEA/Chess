@@ -80,6 +80,10 @@ public class Board {
         Piece pieceFrom = pieces[posFrom[1]][posFrom[0]];
         if(pieceFrom.checkMove(posFrom,posTo) && clearPath(posFrom,posTo))
         {
+            if((pieceFrom.toString()).equals("E8")||(pieceFrom.toString()).equals("D1")){
+
+
+            }
             pieces[posFrom[1]][posFrom[0]] = null;
             pieces[posTo[1]][posTo[0]] = pieceFrom;
             return true;

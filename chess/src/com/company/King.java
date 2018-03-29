@@ -1,9 +1,10 @@
 package com.company;
 
 public class King extends Piece {
-    public boolean isBlack;// false for white and true for black
+    private boolean isBlack;// false for white and true for black
     protected static int numOfWhitePieces = 0;
     protected static int numOfBlackPieces = 0;
+    public boolean moveOrNot=true;
     protected King (boolean isBlack){
         this.isBlack = isBlack;
     }
@@ -36,8 +37,10 @@ public class King extends Piece {
         }
     }
     public boolean checkMove(int[] startPos, int[] endPos){ //created by jeremy modified by stevo3.16
-        if (Math.abs(startPos[0] - endPos[0]) <= 1 && Math.abs(startPos[1] - endPos[1]) <= 1)
+        if (Math.abs(startPos[0] - endPos[0]) <= 1 && Math.abs(startPos[1] - endPos[1]) <= 1){
+            moveOrNot=false;
             return true;
+        }
         else
             return false;
 
