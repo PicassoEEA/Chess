@@ -80,13 +80,42 @@ public class Board {
         Piece pieceFrom = pieces[posFrom[1]][posFrom[0]];
         if(pieceFrom.checkMove(posFrom,posTo) && clearPath(posFrom,posTo))
         {
-            if((pieceFrom.toString()).equals("E8")||(pieceFrom.toString()).equals("D1")){
-
-
+            if((pieceFrom.toString()).equals("Bki")&&posTo[1]-posFrom[1]==2){
+                Piece pieceRight1=pieces[posFrom[1]][posFrom[0]-1];
+                Piece pieceRight2=pieces[posFrom[1]][posFrom[0]-2];
+                if((pieceRight1.toString().equals(null) && pieceRight2.toString().equals(null)))
+                    {
+                        pieces[posFrom[1]][posFrom[0]] = null;
+                        pieces[posTo[1]][posTo[0]] = pieceFrom;
+                        pieces[2][7]=pieces[0][7];
+                        pieces[0][7]=null;
+                        return true;
+                }
+                else{
+                    return false;
+                }
             }
+            else if((pieceFrom.toString()).equals("WKi")&&posTo[1]-posFrom[1]==-2){
+                Piece pieceLeft1=pieces[posFrom[1]][posFrom[0]+1];
+                Piece pieceLeft2=pieces[posFrom[1]][posFrom[0]+2];
+                if((pieceLeft1.toString().equals(null) && pieceLeft2.toString().equals(null)))
+                {
+                    pieces[posFrom[1]][posFrom[0]] = null;
+                    pieces[posTo[1]][posTo[0]] = pieceFrom;
+                    pieces[5][0]=pieces[7][0];
+                    pieces[7][0]=null;
+                    return true;
+                }
+                else{
+                    return false;
+
+                }
+            }
+            else{
             pieces[posFrom[1]][posFrom[0]] = null;
             pieces[posTo[1]][posTo[0]] = pieceFrom;
             return true;
+            }
         }
         return false;
     }
