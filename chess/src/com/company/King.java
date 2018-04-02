@@ -41,6 +41,9 @@ public class King extends Piece {
             moveOrNot=false;
             return true;
         }
+        if(moveOrNot &&Math.abs(startPos[1] - endPos[1]) ==2){
+            return true;
+        }
         else
             return false;
 

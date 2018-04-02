@@ -76,14 +76,13 @@ public class Board {
         else return "H";}
     public static boolean move(int[] posFrom, int[] posTo)//Stevo created ,stevo and Luvin modified
     {
-
         Piece pieceFrom = pieces[posFrom[1]][posFrom[0]];
         if(pieceFrom.checkMove(posFrom,posTo) && clearPath(posFrom,posTo))
         {
             if((pieceFrom.toString()).equals("Bki")&&posTo[1]-posFrom[1]==2){
                 Piece pieceRight1=pieces[posFrom[1]][posFrom[0]-1];
                 Piece pieceRight2=pieces[posFrom[1]][posFrom[0]-2];
-                if((pieceRight1.toString().equals(null) && pieceRight2.toString().equals(null)))
+                if(pieceRight1==null && pieceRight2==null)
                     {
                         pieces[posFrom[1]][posFrom[0]] = null;
                         pieces[posTo[1]][posTo[0]] = pieceFrom;
@@ -98,7 +97,7 @@ public class Board {
             else if((pieceFrom.toString()).equals("WKi")&&posTo[1]-posFrom[1]==-2){
                 Piece pieceLeft1=pieces[posFrom[1]][posFrom[0]+1];
                 Piece pieceLeft2=pieces[posFrom[1]][posFrom[0]+2];
-                if((pieceLeft1.toString().equals(null) && pieceLeft2.toString().equals(null)))
+                if(pieceLeft1==null && pieceLeft2==null)
                 {
                     pieces[posFrom[1]][posFrom[0]] = null;
                     pieces[posTo[1]][posTo[0]] = pieceFrom;
@@ -108,7 +107,6 @@ public class Board {
                 }
                 else{
                     return false;
-
                 }
             }
             else{
