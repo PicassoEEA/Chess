@@ -17,7 +17,7 @@ public class ChessTester {
 
     public static void main(String[] args) throws  Exception{
 
-        ChessTester ct = new ChessTester("/Users/biyihe/Desktop/chessTest.rtf");
+        ChessTester ct = new ChessTester("C:\\Users\\ericy\\Desktop\\pawnTest.txt");
         String move;
         while( (move=ct.getNext())!=null )
         {

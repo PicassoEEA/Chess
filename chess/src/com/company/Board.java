@@ -78,7 +78,7 @@ public class Board {
         public static boolean move(int[] posFrom, int[] posTo)//Stevo created ,stevo and Luvin modified
     {
         Piece pieceFrom = pieces[posFrom[1]][posFrom[0]];
-        if(pieceFrom.checkMove(posFrom,posTo) && clearPath(posFrom,posTo))
+        if(pieceFrom.checkMove(posFrom,posTo) && clearPath(posFrom,posTo) && ifMate(pieceFrom.checkIsBlack()))
         {
             if((pieceFrom.toString()).equals("Bki")&&posTo[0]-posFrom[0]==2){
                 Piece pieceRight1=pieces[posFrom[1]][posFrom[0]+1];
@@ -168,22 +168,22 @@ public class Board {
 
     public static Piece getPiece(int x,int y) {return(pieces[y][x]);} //steven created
 
-    public boolean ifMate(boolean isBlack){
+    public static boolean ifMate(boolean isBlack){//by Jeremy
         int a = 0;
         int b = 0;
         while(a < 8){
 
             while(b < 8) {
                 int[] start = {a,b};
-                if (pieces[a][b].checkIsBlack()) {
+                if (pieces[a][b].checkIsBlack() != isBlack) {
                     int c = 0;
                     int d = 0;
                     while (c < 8) {
                         while(d < 8) {
                             int[] end = {c, d};
-                            if (pieces[a][b].checkMove(start, end) == true) {
-                                if(end == positionOfKing) {
-                                    return true;
+                            if (pieces[a][b].checkMove(start, end)) {
+                                if(end == checkKingPosition(isBlack)) {
+                                    return false;
                                 }
                             }
                             d++;
@@ -195,20 +195,21 @@ public class Board {
             }
             a++;
         }
-        return false;
+        return true;
     }
 
 
-    int[] positionOfKing = checkKingPosition();
-    public int[] checkKingPosition() {
+
+    private static int[] checkKingPosition(boolean isBlack) {
         int a = 0;
         int b = 0;
         int[] position = {a, b};
         while (a < 8) {
             while (b < 8) {
-                if (pieces[a][b] instanceof King) {
+                if (pieces[a][b] instanceof King && pieces[a][b].checkIsBlack()==isBlack)
+
                     return position;
-                }
+
                 b++;
             }
             a++;
