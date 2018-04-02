@@ -32,8 +32,8 @@ public class Board {
         pieces[7][0] = Piece.create("Rook",false);
         pieces[7][1] = Piece.create("Knight",false);
         pieces[7][2] = Piece.create("Bishop",false);
-        pieces[7][4] = Piece.create("Queen",false);
-        pieces[7][3] = Piece.create("King",false);
+        pieces[7][3] = Piece.create("Queen",false);
+        pieces[7][4] = Piece.create("King",false);
         pieces[7][5] = Piece.create("Bishop",false);
         pieces[7][6] = Piece.create("Knight",false);
         pieces[7][7] = Piece.create("Rook",false);
@@ -80,14 +80,14 @@ public class Board {
         Piece pieceFrom = pieces[posFrom[1]][posFrom[0]];
         if(pieceFrom.checkMove(posFrom,posTo) && clearPath(posFrom,posTo))
         {
-            if((pieceFrom.toString()).equals("Bki")&&posTo[1]-posFrom[1]==2){
-                Piece pieceRight1=pieces[posFrom[1]][posFrom[0]-1];
-                Piece pieceRight2=pieces[posFrom[1]][posFrom[0]-2];
+            if((pieceFrom.toString()).equals("Bki")&&posTo[0]-posFrom[0]==2){
+                Piece pieceRight1=pieces[posFrom[1]][posFrom[0]+1];
+                Piece pieceRight2=pieces[posFrom[1]][posFrom[0]+2];
                 if(pieceRight1==null && pieceRight2==null)
                     {
                         pieces[posFrom[1]][posFrom[0]] = null;
                         pieces[posTo[1]][posTo[0]] = pieceFrom;
-                        pieces[2][7]=pieces[0][7];
+                        pieces[0][5]=pieces[0][7];
                         pieces[0][7]=null;
                         return true;
                 }
@@ -95,15 +95,15 @@ public class Board {
                     return false;
                 }
             }
-            else if((pieceFrom.toString()).equals("WKi")&&posTo[1]-posFrom[1]==-2){
-                Piece pieceLeft1=pieces[posFrom[1]][posFrom[0]+1];
-                Piece pieceLeft2=pieces[posFrom[1]][posFrom[0]+2];
-                if(pieceLeft1==null && pieceLeft2==null)
+            else if((pieceFrom.toString()).equals("WKi")&&posTo[0]-posFrom[0]==2){
+                Piece pieceRight1=pieces[posFrom[1]][posFrom[0]+1];
+                Piece pieceRight2=pieces[posFrom[1]][posFrom[0]+2];
+                if(pieceRight1==null && pieceRight2==null)
                 {
                     pieces[posFrom[1]][posFrom[0]] = null;
                     pieces[posTo[1]][posTo[0]] = pieceFrom;
-                    pieces[5][0]=pieces[7][0];
-                    pieces[7][0]=null;
+                    pieces[7][5]=pieces[7][7];
+                    pieces[7][7]=null;
                     return true;
                 }
                 else{
