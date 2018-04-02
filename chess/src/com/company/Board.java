@@ -74,7 +74,8 @@ public class Board {
         else if (num == 5) return "F";
         else if (num == 6) return "G";
         else return "H";}
-    public static boolean move(int[] posFrom, int[] posTo)//Stevo created ,stevo and Luvin modified
+
+        public static boolean move(int[] posFrom, int[] posTo)//Stevo created ,stevo and Luvin modified
     {
         Piece pieceFrom = pieces[posFrom[1]][posFrom[0]];
         if(pieceFrom.checkMove(posFrom,posTo) && clearPath(posFrom,posTo))
@@ -117,6 +118,7 @@ public class Board {
         }
         return false;
     }
+
     public static Piece[] getView(int index[], boolean isBlack){
         int row = 0;
         if(isBlack)
@@ -163,7 +165,59 @@ public class Board {
         }
         return true;
     }
+
     public static Piece getPiece(int x,int y) {return(pieces[y][x]);} //steven created
+
+    public boolean ifMate(boolean isBlack){
+        int a = 0;
+        int b = 0;
+        while(a < 8){
+
+            while(b < 8) {
+                int[] start = {a,b};
+                if (pieces[a][b].checkIsBlack()) {
+                    int c = 0;
+                    int d = 0;
+                    while (c < 8) {
+                        while(d < 8) {
+                            int[] end = {c, d};
+                            if (pieces[a][b].checkMove(start, end) == true) {
+                                if(end == positionOfKing) {
+                                    return true;
+                                }
+                            }
+                            d++;
+                        }
+                        c++;
+                    }
+                }
+                b++;
+            }
+            a++;
+        }
+        return false;
+    }
+
+
+    int[] positionOfKing = checkKingPosition();
+    public int[] checkKingPosition() {
+        int a = 0;
+        int b = 0;
+        int[] position = {a, b};
+        while (a < 8) {
+            while (b < 8) {
+                if (pieces[a][b] instanceof King) {
+                    return position;
+                }
+                b++;
+            }
+            a++;
+        }
+        return position;
+    }
+
+
+
 }
 
 
