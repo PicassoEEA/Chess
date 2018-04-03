@@ -28,8 +28,9 @@ public class TestByTxt {
             String[] move = null;
             while(move == null || !(move[0].equals("quit"))){
                 try {
-                    System.out.println();
+                    System.out.println("================================");
                     System.out.println(board);
+                    System.out.println("================================");
                     System.out.print(whitePlayer + "'s move : ");
                     move = seperater(ct.getNext());
                     while(!whitePlayer.move(move[0], move[1]))
@@ -38,8 +39,9 @@ public class TestByTxt {
                         System.out.print(whitePlayer + "'s move : ");
                         move = seperater(ct.getNext());
                     }
-                    System.out.println();
+                    System.out.println("================================");
                     System.out.println(board);
+                    System.out.println("================================");
                     System.out.print(blackPlayer + "'s move : ");
                     move = seperater(ct.getNext());
                     while(!blackPlayer.move(move[0], move[1])) {

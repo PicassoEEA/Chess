@@ -119,18 +119,18 @@ public class Board {
         return false;
     }
 
-    public static Piece[] getView(int index[], boolean isBlack){
+    public static Piece[] getView(int index[], boolean isBlack){//modified by eric(wrong row and column)
         int row = 0;
         if(isBlack)
             row = 1;
         else
             row = -1;
         Piece output[] = new Piece[3];
-        if (index[0] != 0)
-        output[2] = pieces[index[1] + row][index[0] - 1];
-        output[1] = pieces[index[1] + row][index[0]];
-        if (index[0] != 7)
-        output[0] = pieces[index[1] + row][index[0] + 1];
+        if (index[1] != 0)
+        output[2] = pieces[index[0] + row][index[1] - 1];
+        output[1] = pieces[index[0] + row][index[1]];
+        if (index[1] != 7)
+        output[0] = pieces[index[0] + row][index[1] + 1];
         return output;
     }
 
@@ -168,17 +168,18 @@ public class Board {
 
     public static Piece getPiece(int x,int y) {return(pieces[y][x]);} //steven created
 
-    public static boolean ifMate(boolean isBlack){//by Jeremy
+    public static boolean ifMate(boolean isBlack){//by Jeremy; modified by eric (wrong loop)
         int a = 0;
         int b = 0;
         while(a < 8){
-
+            b = 0;
             while(b < 8) {
                 int[] start = {a,b};
-                if (pieces[a][b].checkIsBlack() != isBlack) {
+                if (pieces[a][b] != null && pieces[a][b].checkIsBlack() != isBlack) {
                     int c = 0;
                     int d = 0;
                     while (c < 8) {
+                        d = 0;
                         while(d < 8) {
                             int[] end = {c, d};
                             if (pieces[a][b].checkMove(start, end)) {
