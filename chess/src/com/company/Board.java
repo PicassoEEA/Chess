@@ -168,7 +168,7 @@ public class Board {
 
     public static Piece getPiece(int x,int y) {return(pieces[y][x]);} //steven created
 
-    public static boolean ifMate(boolean isBlack){//by Jeremy; modified by eric (wrong loop)
+    private static boolean ifMate(boolean isBlack){//by Jeremy; modified by eric (wrong loop)
         int a = 0;
         int b = 0;
         while(a < 8){
@@ -219,10 +219,36 @@ public class Board {
     }
 
     public static boolean endgame(boolean isBlack){//by eric; true for keep playing and false for end game
+        int[] startPos = new int[2];
+        int[] endPos = new int[2];
+        Piece temp = null;
         if (ifMate(isBlack)) {
             for (int i = 0; i < 8; i++) {
-                for (int j = 0; j < 9; j++) {
+                for (int j = 0; j < 8; j++) {
 
+
+                    if (pieces[i][j].checkIsBlack()==isBlack){
+                        for (int k = 0 ; k < 8 ; k++){
+                            for (int l = 0 ; l < 8 ; l++){
+                                startPos[0] = j;
+                                startPos[1] = i;
+                                endPos[0] = l;
+                                endPos[1] = k;
+                                if(move(startPos,endPos)){
+                                    if (ifMate(isBlack)) {
+                                        temp = pieces[i][j];
+                                        pieces[i][j] = pieces[k][l];
+                                        pieces[k][l] = temp;
+                                        return false;
+                                    }
+                                    temp = pieces[i][j];
+                                    pieces[i][j] = pieces[k][l];
+                                    pieces[k][l] = temp;
+                                }
+
+                            }
+                        }
+                    }
                 }
             }
 

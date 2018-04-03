@@ -39,6 +39,10 @@ public class TestByTxt {
                         System.out.print(whitePlayer + "'s move : ");
                         move = seperater(ct.getNext());
                     }
+                    if (!Board.endgame(true)){
+                        System.out.println("white player wins!!");
+                        break;
+                    }
                     System.out.println("================================");
                     System.out.println(board);
                     System.out.println("================================");
@@ -48,6 +52,10 @@ public class TestByTxt {
                         System.out.println("illegal move, please enter again");
                         System.out.print(blackPlayer + "'s move : ");
                         move = seperater(ct.getNext());
+                    }
+                    if (!Board.endgame(false)){
+                        System.out.println("black player wins!!");
+                        break;
                     }
                 }
                 catch(StringIndexOutOfBoundsException i){
