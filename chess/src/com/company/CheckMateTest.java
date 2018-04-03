@@ -1,6 +1,6 @@
 package com.company;
-import java.util.Scanner;
-public class PawnTest {
+
+public class CheckMateTest {
 
 
 
@@ -17,7 +17,7 @@ public class PawnTest {
 
     public static void main(String[] args) {//Jeremy created at 3.23 1:12
         try {
-            ChessTester ct = new ChessTester("C:\\Users\\ericy\\Desktop\\TestingFiles\\pawnTest.txt");
+            ChessTester ct = new ChessTester("C:\\Users\\ericy\\Desktop\\TestingFiles\\knightTest.txt");
             System.out.print("please enter the White player's name : ");
             whitePlayer = Player.createPlayer(ct.getNext());
             System.out.println();
