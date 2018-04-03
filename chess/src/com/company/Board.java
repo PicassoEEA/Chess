@@ -217,6 +217,19 @@ public class Board {
         return position;
     }
 
+    public static boolean endgame(boolean isBlack){//by eric; true for keep playing and false for end game
+        if (ifMate(isBlack)) {
+            for (int i = 0; i < 8; i++) {
+                for (int j = 0; j < 9; j++) {
+
+                }
+            }
+
+            return false;
+        }
+        return true;
+    }
+
 
 
 }
