@@ -12,13 +12,15 @@ public class ChessTester {
     }
 
     public String getNext() throws Exception{
-        return br.readLine();
+        String str = br.readLine();
+        System.out.println(str);
+        return str;
     }
 
 
     public static void main(String[] args) throws  Exception{
 
-        ChessTester ct = new ChessTester("C:\\Users\\ericy\\Desktop\\pawnTest.txt");
+        ChessTester ct = new ChessTester("D:\\Documents\\github\\Chess\\TestingFiles\\checkMateTest.txt");
         String move;
         while( (move=ct.getNext())!=null )
         {

@@ -17,7 +17,7 @@ public class TestByTxt {
 
     public static void main(String[] args) {//Jeremy created at 3.23 1:12
         try {
-            ChessTester ct = new ChessTester("C:\\Users\\ericy\\Desktop\\TestingFiles\\checkMateTest.txt");
+            ChessTester ct = new ChessTester("D:\\Documents\\github\\Chess\\TestingFiles\\checkMateTest.txt");
             System.out.print("please enter the White player's name : ");
             whitePlayer = Player.createPlayer(ct.getNext());
             System.out.println();
@@ -26,7 +26,7 @@ public class TestByTxt {
 
             String inputLine = "";
             String[] move = null;
-            while(!(inputLine.equals("quit"))){
+            while(move == null || !(move[0].equals("quit"))){
                 try {
                     System.out.println();
                     System.out.println(board);
