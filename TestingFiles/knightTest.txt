@@ -1,0 +1,5 @@
+player1
+palyer2
+B1,C3
+B8,A6
+quit
