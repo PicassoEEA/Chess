@@ -81,6 +81,8 @@ public class Board {
         if(pieceFrom.checkMove(posFrom,posTo) && clearPath(posFrom,posTo) && ifMate(pieceFrom.checkIsBlack()))
         {
             if((pieceFrom.toString()).equals("BKi")&&posTo[0]-posFrom[0]==2){
+                //King kingPiece = pieceFrom;
+                //pieceFrom.setMoved();
                 Piece pieceRight1=pieces[posFrom[1]][posFrom[0]+1];
                 Piece pieceRight2=pieces[posFrom[1]][posFrom[0]+2];
                 if(pieceRight1==null && pieceRight2==null)
