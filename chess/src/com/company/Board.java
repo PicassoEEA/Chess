@@ -80,36 +80,49 @@ public class Board {
         Piece pieceFrom = pieces[posFrom[1]][posFrom[0]];
         if(pieceFrom.checkMove(posFrom,posTo) && clearPath(posFrom,posTo) && ifMate(pieceFrom.checkIsBlack()))
         {
-            if((pieceFrom.toString()).equals("BKi")&&posTo[0]-posFrom[0]==2){
-                //King kingPiece = pieceFrom;
-                //pieceFrom.setMoved();
-                Piece pieceRight1=pieces[posFrom[1]][posFrom[0]+1];
-                Piece pieceRight2=pieces[posFrom[1]][posFrom[0]+2];
-                if(pieceRight1==null && pieceRight2==null)
+            if(pieceFrom instanceof King)
+            {
+                if(pieceFrom.checkIsBlack() && posTo[0] - posFrom[0] == 2)
+                {
+                    Piece pieceRight1=pieces[posFrom[1]][posFrom[0]+1];
+                    Piece pieceRight2=pieces[posFrom[1]][posFrom[0]+2];
+                    if(pieceRight1==null && pieceRight2==null)
                     {
                         pieces[posFrom[1]][posFrom[0]] = null;
                         pieces[posTo[1]][posTo[0]] = pieceFrom;
                         pieces[0][5]=pieces[0][7];
                         pieces[0][7]=null;
+                        King kingPiece = (King)pieceFrom;
+                        kingPiece.setMoved();
                         return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
                 }
-                else{
-                    return false;
+                else if(posTo[0] - posFrom[0] == 2) {
+                    Piece pieceRight1 = pieces[posFrom[1]][posFrom[0] + 1];
+                    Piece pieceRight2 = pieces[posFrom[1]][posFrom[0] + 2];
+                    if (pieceRight1 == null && pieceRight2 == null) {
+                        pieces[posFrom[1]][posFrom[0]] = null;
+                        pieces[posTo[1]][posTo[0]] = pieceFrom;
+                        pieces[7][5] = pieces[7][7];
+                        pieces[7][7] = null;
+                        King kingPiece = (King) pieceFrom;
+                        kingPiece.setMoved();
+                        return true;
+                    } else {
+                        return false;
+                    }
                 }
-            }
-            else if((pieceFrom.toString()).equals("WKi")&&posTo[0]-posFrom[0]==2){
-                Piece pieceRight1=pieces[posFrom[1]][posFrom[0]+1];
-                Piece pieceRight2=pieces[posFrom[1]][posFrom[0]+2];
-                if(pieceRight1==null && pieceRight2==null)
+                else
                 {
                     pieces[posFrom[1]][posFrom[0]] = null;
                     pieces[posTo[1]][posTo[0]] = pieceFrom;
-                    pieces[7][5]=pieces[7][7];
-                    pieces[7][7]=null;
+                    King kingPiece = (King) pieceFrom;
+                    kingPiece.setMoved();
                     return true;
-                }
-                else{
-                    return false;
                 }
             }
             else{

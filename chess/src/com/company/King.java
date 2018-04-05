@@ -4,7 +4,7 @@ public class King extends Piece {
     private boolean isBlack;// false for white and true for black
     protected static int numOfWhitePieces = 0;
     protected static int numOfBlackPieces = 0;
-    //private boolean moved;
+    private boolean moved;
     protected King (boolean isBlack){
         this.isBlack = isBlack;
     }
@@ -40,7 +40,7 @@ public class King extends Piece {
         if (Math.abs(startPos[0] - endPos[0]) <= 1 && Math.abs(startPos[1] - endPos[1]) <= 1){
             return true;
         }
-        if(endPos[0] - startPos[0] == 2){
+        else if(!moved && endPos[0] - startPos[0] == 2){
             return true;
         }
         else
@@ -50,8 +50,8 @@ public class King extends Piece {
     public boolean checkIsBlack(){
         return isBlack;
     }
-    /*public void setMoved()
+    public void setMoved()
     {
         moved = true;
-    }*/
+    }
 }
