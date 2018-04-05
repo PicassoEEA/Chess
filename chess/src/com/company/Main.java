@@ -23,6 +23,12 @@ public class Main {
         p2.move("E7","E5");
         p2.move("F8","E7");
         p2.move("E8","G8");
+        p2.move("D7","D5");
+        p1.move("A2","A4");
+        p1.move("A1","A3");
+        p1.move("A3","C3");
+        p1.move("C3","C6");
+        p1.move("C6","D6");
         System.out.println(board);
     }
 }

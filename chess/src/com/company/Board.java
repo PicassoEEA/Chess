@@ -126,11 +126,12 @@ public class Board {
         else
             row = -1;
         Piece output[] = new Piece[3];
-        if (index[1] != 0)
-        output[2] = pieces[index[0] + row][index[1] - 1];
-        output[1] = pieces[index[0] + row][index[1]];
+        if (index[1] != 0) {
+            output[2] = pieces[index[0] + row][index[1] - 1];
+            output[1] = pieces[index[0] + row][index[1]];
+        }
         if (index[1] != 7)
-        output[0] = pieces[index[0] + row][index[1] + 1];
+            output[0] = pieces[index[0] + row][index[1] + 1];
         return output;
     }
 
@@ -183,8 +184,8 @@ public class Board {
                         while(d < 8) {
                             int[] end = {c, d};
                             if (pieces[a][b].checkMove(start, end)) {
-                                if(end == checkKingPosition(isBlack)) {
-                                    return false;
+                                if(end != checkKingPosition(isBlack)) {
+                                    return true;
                                 }
                             }
                             d++;
@@ -196,7 +197,7 @@ public class Board {
             }
             a++;
         }
-        return true;
+        return false;
     }
 
 
@@ -207,10 +208,8 @@ public class Board {
         int[] position = {a, b};
         while (a < 8) {
             while (b < 8) {
-                if (pieces[a][b] instanceof King && pieces[a][b].checkIsBlack()==isBlack)
-
+                if (pieces[a][b] instanceof King && pieces[a][b].checkIsBlack() == isBlack)
                     return position;
-
                 b++;
             }
             a++;

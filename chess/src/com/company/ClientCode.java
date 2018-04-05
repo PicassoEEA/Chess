@@ -12,7 +12,6 @@ public class ClientCode {
         System.out.println();
         System.out.print("please enter the Black player's name : ");
         blackPlayer = Player.createPlayer(scanner.nextLine());
-
         String inputLine = "";
         String[] move = null;
         while(!(inputLine.equals("quit"))){
