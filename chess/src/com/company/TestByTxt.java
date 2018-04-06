@@ -17,7 +17,8 @@ public class TestByTxt {
 
     public static void main(String[] args) {//Jeremy created at 3.23 1:12
         try {
-            ChessTester ct = new ChessTester("D:\\Documents\\github\\Chess\\TestingFiles\\checkMateTest.txt");
+            // ChessTester ct = new ChessTester("D:\\Documents\\github\\Chess\\TestingFiles\\checkMateTest.txt");
+            ChessTester ct = new ChessTester("D:\\Documents\\github\\Chess\\TestingFiles\\endGameTest.txt");
             System.out.print("please enter the White player's name : ");
             whitePlayer = Player.createPlayer(ct.getNext());
             System.out.println();
@@ -39,10 +40,10 @@ public class TestByTxt {
                         System.out.print(whitePlayer + "'s move : ");
                         move = seperater(ct.getNext());
                     }
-                    if (!Board.endgame(true)){
+                    /*if (!Board.endgame(true)){
                         System.out.println("white player wins!!");
                         break;
-                    }
+                    }*/
                     System.out.println("================================");
                     System.out.println(board);
                     System.out.println("================================");
@@ -53,10 +54,10 @@ public class TestByTxt {
                         System.out.print(blackPlayer + "'s move : ");
                         move = seperater(ct.getNext());
                     }
-                    if (!Board.endgame(false)){
+                    /*if (!Board.endgame(false)){
                         System.out.println("black player wins!!");
                         break;
-                    }
+                    }*/
                 }
                 catch(StringIndexOutOfBoundsException i){
                     System.out.println("already quit");

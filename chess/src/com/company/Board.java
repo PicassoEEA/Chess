@@ -141,12 +141,22 @@ public class Board {
         else
             row = -1;
         Piece output[] = new Piece[3];
-        if (index[1] != 0) {
+        if (index[0]!=0){
+            output[0] = pieces[index[1]+row][index[0]-1];
+        }
+        output[1] = pieces[index[1]+row][index[0]];
+        if (index[0]!=7) {
+            output[2] = pieces[index[1]+row][index[0]+1];
+        }
+
+        /*
+        if (index[0] != 0) {
             output[2] = pieces[index[0] + row][index[1] - 1];
             output[1] = pieces[index[0] + row][index[1]];
         }
         if (index[1] != 7)
             output[0] = pieces[index[0] + row][index[1] + 1];
+            */
         return output;
     }
 
@@ -241,7 +251,7 @@ public class Board {
                 for (int j = 0; j < 8; j++) {
 
 
-                    if (pieces[i][j].checkIsBlack()==isBlack){
+                    if ((pieces[i][j]!=null)&&(pieces[i][j].checkIsBlack()==isBlack)){
                         for (int k = 0 ; k < 8 ; k++){
                             for (int l = 0 ; l < 8 ; l++){
                                 startPos[0] = j;
