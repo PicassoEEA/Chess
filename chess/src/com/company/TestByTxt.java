@@ -1,5 +1,5 @@
 package com.company;
-
+import java.io.*;
 public class TestByTxt {
 
 
@@ -17,8 +17,11 @@ public class TestByTxt {
 
     public static void main(String[] args) {//Jeremy created at 3.23 1:12
         try {
-            // ChessTester ct = new ChessTester("D:\\Documents\\github\\Chess\\TestingFiles\\checkMateTest.txt");
-            ChessTester ct = new ChessTester("D:\\Documents\\github\\Chess\\TestingFiles\\endGameTest.txt");
+            File directory = new File("");
+
+            String curPath = directory.getAbsolutePath();
+            //ChessTester ct = new ChessTester(curPath+"\\..\\TestingFiles\\checkMateTest.txt");
+            ChessTester ct = new ChessTester(curPath+"\\..\\TestingFiles\\endGameTest.txt");
             System.out.print("please enter the White player's name : ");
             whitePlayer = Player.createPlayer(ct.getNext());
             System.out.println();
