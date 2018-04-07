@@ -7,4 +7,5 @@ d8,d5
 e1,e2
 d5,e5
 e2,e3
+e2,d3
 quit

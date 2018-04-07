@@ -41,31 +41,32 @@ public class Pawn extends Piece {
     }
 
     public boolean checkMove(int[] startPos, int[] endPos) { //Luvin created Stevo modified !!This mehthod is not completed because it requires getIsBlack()
+        // modified the conditions for different sides, by Eric
         Piece[] frontView = Board.getView(startPos, isBlack);
         if (isBlack) //Black piece
         {
-            if (startPos[0] == endPos[0] && frontView[1] == null && startPos[1] - endPos[1] <= 2) // Going straight
+            if (startPos[0] == endPos[0] && frontView[1] == null && (endPos[1] - startPos[1] <= 2)) // Going straight
             {
                 if (!moved && startPos[1] - endPos[1] == 2) { //first time move
                     moved = false;
                     return true;
                 } else
                     return true;        //normal move
-            } else if (Math.abs(startPos[0] - endPos[0]) == 1 && Math.abs(startPos[1] - endPos[1]) == 1) // going diagonal
+            } else if (Math.abs(startPos[0] - endPos[0]) == 1 && (endPos[1] - startPos[1] == 1)) // going diagonal
             {
                 if (startPos[0] - endPos[0] == 1 && frontView[0] != null)// &&frontView[0].getIsBlack()) //left
                 {
                     return true;
-                } else if (startPos[0] - endPos[0] == -1 && frontView[2] != null )//&& !frontView[2].getIsBlack()) //right
+                } else if ((endPos[0] - startPos[0] == 1) && frontView[2] != null )//&& !frontView[2].getIsBlack()) //right
                 {
                     return true;
                 } else
                     return false;
             }
         } else {
-            if (startPos[0] == endPos[0] && frontView[1] == null && startPos[1] - endPos[1] >= -2) // Going straight
+            if (startPos[0] == endPos[0] && frontView[1] == null && (startPos[1] - endPos[1] <= 2)) // Going straight
             {
-                if (!moved && startPos[1] - endPos[1] == -2) { //first time move
+                if (!moved && (startPos[1] - endPos[1] == 2)) { //first time move
                     moved = false;
                     return true;
                 } else

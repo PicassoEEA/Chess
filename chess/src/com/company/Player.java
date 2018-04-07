@@ -41,7 +41,7 @@ public class Player {
             int[] endPosArr = str2Index(endPosition);
             if(selfOrNot(Board.getPiece(startPosArr[0],startPosArr[1]))) {
                 if(Board.move(startPosArr, endPosArr)){
-                return true;
+                    return true;
                 }
                 return false;
             }

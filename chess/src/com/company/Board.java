@@ -1,5 +1,6 @@
 package com.company;
 
+import java.util.Arrays;
 
 public class Board {
     static Piece[][] pieces = new Piece[8][8];
@@ -78,7 +79,7 @@ public class Board {
         public static boolean move(int[] posFrom, int[] posTo)//Stevo created ,stevo and Luvin modified
     {
         Piece pieceFrom = pieces[posFrom[1]][posFrom[0]];
-        if(pieceFrom.checkMove(posFrom,posTo) && clearPath(posFrom,posTo) && ifMate(pieceFrom.checkIsBlack()))
+        if(pieceFrom.checkMove(posFrom,posTo) && clearPath(posFrom,posTo) && !ifMate(pieceFrom.checkIsBlack()))
         {
             if(pieceFrom instanceof King)
             {
@@ -160,8 +161,26 @@ public class Board {
         return output;
     }
 
+    // created at 20180407 by Eric
+    // make sure that col and row is valid number
+    private static boolean posValid(int col, int row)
+    {
+        if ((col<0)||(col>7)){
+            return false;
+        }
+
+        if ((row<0)||(row>7)){
+            return false;
+        }
+
+        return true;
+    }
+
+    // modified at 20180407 by Eric
+    // 1. add pieces!=null
+    // 2. add posValid function
     private static boolean clearPath(int[] posFrom, int[] posTo){//check if the path is clear ; by eric
-        if (pieces[posFrom[1]][posFrom[0]] instanceof Knight)
+        if (pieces[posFrom[1]][posFrom[0]]!=null && pieces[posFrom[1]][posFrom[0]] instanceof Knight)
             return true;
         int xDirection = 0;
         int yDirection = 0;
@@ -186,7 +205,8 @@ public class Board {
         for (int i = 0; i< distance - 1; i ++){
             currentPostion[1] = currentPostion[1] + yDirection;
             currentPostion[0] = currentPostion[0] + xDirection;
-            if (pieces[currentPostion[1]][currentPostion[0]]  != null)
+            if (posValid(currentPostion[1], currentPostion[0])
+                    && pieces[currentPostion[1]][currentPostion[0]]  != null)
                 return false;
         }
         return true;
@@ -194,22 +214,26 @@ public class Board {
 
     public static Piece getPiece(int x,int y) {return(pieces[y][x]);} //steven created
 
+    // modified at 20180407 by Eric
+    // 1. change the return value to true for checkmate
+    // 2. add clearPath function when checkMove
+    // 3. modify postion expression, ex. start={a, b} to {b, a}
     private static boolean ifMate(boolean isBlack){//by Jeremy; modified by eric (wrong loop)
         int a = 0;
         int b = 0;
         while(a < 8){
             b = 0;
             while(b < 8) {
-                int[] start = {a,b};
+                int[] start = {b, a};
                 if (pieces[a][b] != null && pieces[a][b].checkIsBlack() != isBlack) {
                     int c = 0;
                     int d = 0;
                     while (c < 8) {
                         d = 0;
                         while(d < 8) {
-                            int[] end = {c, d};
-                            if (pieces[a][b].checkMove(start, end)) {
-                                if(end != checkKingPosition(isBlack)) {
+                            int[] end = {d, c};
+                            if (clearPath(start,end) && pieces[a][b].checkMove(start, end)) {
+                                if (checkKingPosition(isBlack, end)){
                                     return true;
                                 }
                             }
@@ -226,20 +250,16 @@ public class Board {
     }
 
 
-
-    private static int[] checkKingPosition(boolean isBlack) {
-        int a = 0;
-        int b = 0;
-        int[] position = {a, b};
-        while (a < 8) {
-            while (b < 8) {
-                if (pieces[a][b] instanceof King && pieces[a][b].checkIsBlack() == isBlack)
-                    return position;
-                b++;
-            }
-            a++;
+    // check if position is the King position
+    private static boolean checkKingPosition(boolean isBlack, int[] position) {
+        int a = position[1];
+        int b = position[0];
+        if (pieces[a][b]!=null && pieces[a][b] instanceof King && pieces[a][b].checkIsBlack() == isBlack) {
+            return true;
         }
-        return position;
+
+        return false;
+
     }
 
     public static boolean endgame(boolean isBlack){//by eric; true for keep playing and false for end game
