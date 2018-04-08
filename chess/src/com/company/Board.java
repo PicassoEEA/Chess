@@ -76,63 +76,54 @@ public class Board {
         else if (num == 6) return "G";
         else return "H";}
 
-        public static boolean move(int[] posFrom, int[] posTo)//Stevo created ,stevo and Luvin modified
+    public static boolean move(int[] posFrom, int[] posTo)//Stevo created ,stevo and Luvin modified *Last modified by Steven on 4.8
     {
         Piece pieceFrom = pieces[posFrom[1]][posFrom[0]];
-        if(pieceFrom.checkMove(posFrom,posTo) && clearPath(posFrom,posTo) && !ifMate(pieceFrom.checkIsBlack()))
-        {
-            if(pieceFrom instanceof King)
+        Piece tempPiece = pieces[posFrom[1]][posFrom[0]];
+        //Boolean movable = false;
+        if (pieceFrom.checkMove(posFrom, posTo) && clearPath(posFrom, posTo)) {
+            if (pieceFrom instanceof King) // Castling and King movement
             {
-                if(pieceFrom.checkIsBlack() && posTo[0] - posFrom[0] == 2)
+                if (pieceFrom.checkIsBlack() && posTo[0] - posFrom[0] == 2) //Black King
                 {
-                    Piece pieceRight1=pieces[posFrom[1]][posFrom[0]+1];
-                    Piece pieceRight2=pieces[posFrom[1]][posFrom[0]+2];
-                    if(pieceRight1==null && pieceRight2==null)
-                    {
-                        pieces[posFrom[1]][posFrom[0]] = null;
-                        pieces[posTo[1]][posTo[0]] = pieceFrom;
-                        pieces[0][5]=pieces[0][7];
-                        pieces[0][7]=null;
-                        King kingPiece = (King)pieceFrom;
-                        kingPiece.setMoved();
-                        return true;
-                    }
-                    else
-                    {
-                        return false;
-                    }
-                }
-                else if(posTo[0] - posFrom[0] == 2) {
-                    Piece pieceRight1 = pieces[posFrom[1]][posFrom[0] + 1];
-                    Piece pieceRight2 = pieces[posFrom[1]][posFrom[0] + 2];
-                    if (pieceRight1 == null && pieceRight2 == null) {
-                        pieces[posFrom[1]][posFrom[0]] = null;
-                        pieces[posTo[1]][posTo[0]] = pieceFrom;
-                        pieces[7][5] = pieces[7][7];
-                        pieces[7][7] = null;
-                        King kingPiece = (King) pieceFrom;
-                        kingPiece.setMoved();
-                        return true;
-                    } else {
-                        return false;
-                    }
-                }
-                else
-                {
+                    pieces[posFrom[1]][posFrom[0]] = null;
+                    pieces[posTo[1]][posTo[0]] = pieceFrom;
+                    pieces[0][5] = pieces[0][7];
+                    pieces[0][7] = null;
+                    King kingPiece = (King) pieceFrom;
+                    kingPiece.setMoved();
+                } else if (posTo[0] - posFrom[0] == 2) { // White King
+                    pieces[posFrom[1]][posFrom[0]] = null;
+                    pieces[posTo[1]][posTo[0]] = pieceFrom;
+                    pieces[7][5] = pieces[7][7];
+                    pieces[7][7] = null;
+                    King kingPiece = (King) pieceFrom;
+                    kingPiece.setMoved();
+                } else {  // normal king move
                     pieces[posFrom[1]][posFrom[0]] = null;
                     pieces[posTo[1]][posTo[0]] = pieceFrom;
                     King kingPiece = (King) pieceFrom;
                     kingPiece.setMoved();
-                    return true;
                 }
             }
-            else{
-            pieces[posFrom[1]][posFrom[0]] = null;
-            pieces[posTo[1]][posTo[0]] = pieceFrom;
-            return true;
+            else  // normal move
+            {
+                pieces[posFrom[1]][posFrom[0]] = null;
+                pieces[posTo[1]][posTo[0]] = pieceFrom;
             }
+            if (ifMate(pieceFrom.checkIsBlack())) {
+                undoStep(posFrom, posTo, tempPiece);
+                return false;
+            } else
+                return true;
         }
-        return false;
+        else
+            return false;
+    }
+    private static void undoStep(int[] fromPos, int[] toPos, Piece tempPiece) //created by steven on 4.8
+    {
+        pieces[toPos[1]][toPos[0]] = pieces[fromPos[1]][fromPos[0]];
+        pieces[fromPos[1]][fromPos[0]] = tempPiece;
     }
 
     public static Piece[] getView(int index[], boolean isBlack){//modified by eric(wrong row and column)
