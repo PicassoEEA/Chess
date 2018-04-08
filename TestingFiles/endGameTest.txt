@@ -1,5 +1,3 @@
-player1
-player2
 e2,e4
 d7,d5
 e4,e5

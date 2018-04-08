@@ -1,5 +1,4 @@
-player1
-player2
+
 E2,E3
 
 quit
