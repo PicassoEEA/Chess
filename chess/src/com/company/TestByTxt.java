@@ -21,7 +21,7 @@ public class TestByTxt {
 
             String curPath = directory.getAbsolutePath();
             //ChessTester ct = new ChessTester(curPath+"\\..\\TestingFiles\\checkMateTest.txt");
-            ChessTester ct = new ChessTester(curPath+"\\..\\TestingFiles\\endGameTest.txt");
+            ChessTester ct = new ChessTester(curPath+"\\..\\TestingFiles\\test.game");
             System.out.print("please enter the White player's name : ");
             whitePlayer = Player.createPlayer("player1");
             System.out.println();
@@ -70,7 +70,7 @@ public class TestByTxt {
             }
         }
         catch (Exception i){
-            System.out.println(i);
+            System.out.println("quit");
         }
 
 

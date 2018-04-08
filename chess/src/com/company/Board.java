@@ -339,7 +339,7 @@ public class Board {
         //boolean output = false;
         for (int i = 0 ; i < 8 ; i++){
             for (int j = 0 ; j < 8 ; j++){
-                if (pieces[i][j] instanceof King && pieces[i][j].checkIsBlack() == isBlack)
+                if (pieces[i][j] != null && pieces[i][j] instanceof King && pieces[i][j].checkIsBlack() == isBlack)
                     return false;
             }
         }
