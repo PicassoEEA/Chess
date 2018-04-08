@@ -62,11 +62,32 @@ public class Board {
         return output;
     }
 
+    private static String printBoard() {
+
+        String output = "++++++++++++++++++++++" + "\n";
+        for (int i = 0; i < pieces.length; i++) {
+            output += 8 - i + "  ";
+            for (int j = 0; j < pieces[0].length; j++) {
+                if (pieces[i][j] == null)
+                    output += "    ";
+                else
+                    output += pieces[i][j] + " ";
+            }
+            output += "\n";
+        }
+
+        output += "\n ";
+
+        for (int i = 0; i < pieces.length; i++)
+            output += "  " + num2Alpha(i) + " ";
+        output += "\n" + "+++++++++++++++++" + "\n";
+        return output;
+    }
     public void main(){
         System.out.println(toString());
     }
 
-    private String num2Alpha(int num) {
+    private static String num2Alpha(int num) {
         if (num == 0) return "A";
         else if (num == 1) return "B";
         else if (num == 2) return "C";
@@ -291,41 +312,70 @@ public class Board {
         }
         return true;
     }*/
+   // public static boolean endGame
 
-    /*public static boolean endGame(boolean isBlack){//true for endgame and false for comtinues
+    public static boolean endGame(boolean isBlack)
+    {//true for endgame and false for comtinues
         Piece[][] tempPieces = new Piece[8][8];
-        for (int i = 0 ; i < 8 ; i++){//copy a board
+        Piece tempPiece;
+        for (int i = 0 ; i < 8 ; i++)
+        {//copy a board
             for (int j = 0 ; j < 8 ; j++)
                 tempPieces[i][j] = pieces[i][j];
         }
-        if (ifMate(isBlack)){
-            for (int i = 0 ; i < 8 ; i++){//copy a board
+        if (ifMate(isBlack))
+        {
+            for (int i = 0 ; i < 8 ; i++)
+            {
                 for (int j = 0 ; j < 8 ; j++)
-                    if (pieces[i][j] != null && pieces[i][j].checkIsBlack() == isBlack){
-                    int [] startPos = {j,i};
-                        for (int k = 0 ; k < 8 ; k++){
-                            for (int l = 0 ; l < 8 ; l++){
-                                int [] endPos = {l,k};
-                                if (clearPath(startPos,endPos) && pieces[i][j].checkMove(startPos, endPos)){
-                                    move(startPos,endPos);
-                                    if(!ifMate(isBlack)){
+                {
+                    if (pieces[i][j] != null && pieces[i][j].checkIsBlack() == isBlack)
+                    {
+                        int[] startPos = {j, i};
+                        for (int k = 0; k < 8; k++)
+                        {
+                            for (int l = 0; l < 8; l++)
+                            {
+                                int[] endPos = {l, k};
+                                if(startPos[0] == 5 && startPos[1] == 6 && endPos[0] == 5 && endPos[1] == 7)
+                                {
+                                    int a  = 0;
+                                }
+                                if (clearPath(startPos, endPos) && pieces[i][j].checkMove(startPos, endPos) && selfCheck(pieces[i][j],pieces[endPos[1]][endPos[0]]))
+                                {
+                                    tempPiece = pieces[endPos[1]][endPos[0]];
+                                    move(startPos, endPos);
+                                    //System.out.println(Board.printBoard());
+                                    if (!ifMate(isBlack))
+                                    {
                                         pieces = tempPieces;
                                         return false;
                                     }
+                                    pieces[endPos[1]][endPos[0]] = tempPiece;
+                                    //pieces = tempPieces;
                                 }
                             }
                         }
                     }
+                }
             }
             pieces = tempPieces;
             return true;
         }
-
-
-
         return false;
-    }*/
+    }
 
+    private static boolean selfCheck(Piece from, Piece to){//by Eric 2 hours before submitting
+        if (to == null)
+            return true;
+        else {
+            if (from.checkIsBlack() == to.checkIsBlack())
+                return false;
+            return true;
+        }
+
+    }
+/*
     public static boolean endGame(boolean isBlack){//true for end game and false for continue
         //boolean output = false;
         for (int i = 0 ; i < 8 ; i++){
@@ -338,7 +388,7 @@ public class Board {
     }
 
 
-
+*/
 }
 
 

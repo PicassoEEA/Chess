@@ -45,14 +45,14 @@ public class Pawn extends Piece {
         Piece[] frontView = Board.getView(startPos, isBlack);
         if (isBlack) //Black piece
         {
-            if (startPos[0] == endPos[0] && frontView[1] == null && (endPos[1] - startPos[1] <= 2)) // Going straight
+            if (startPos[0] == endPos[0] && frontView[1] == null && (startPos[1] - endPos[1] < 0) && (startPos[1] - endPos[1] >= -2)) // Going straight
             {
                 if (!moved && startPos[1] - endPos[1] == 2) { //first time move
                     moved = false;
                     return true;
                 } else
                     return true;        //normal move
-            } else if (Math.abs(startPos[0] - endPos[0]) == 1 && (endPos[1] - startPos[1] == 1)) // going diagonal
+            } else if (Math.abs(startPos[0] - endPos[0]) == 1 && (startPos[1] - endPos[1] == -1)) // going diagonal
             {
                 if (startPos[0] - endPos[0] == 1 && frontView[0] != null)// &&frontView[0].getIsBlack()) //left
                 {
@@ -64,14 +64,14 @@ public class Pawn extends Piece {
                     return false;
             }
         } else {
-            if (startPos[0] == endPos[0] && frontView[1] == null && (startPos[1] - endPos[1] <= 2)) // Going straight
+            if (startPos[0] == endPos[0] && frontView[1] == null && (startPos[1] - endPos[1] > 0) && (startPos[1] - endPos[1] <= 2)) // Going straight
             {
                 if (!moved && (startPos[1] - endPos[1] == 2)) { //first time move
                     moved = false;
                     return true;
                 } else
                     return true;        //normal move
-            } else if (Math.abs(startPos[0] - endPos[0]) == 1 && Math.abs(startPos[1] - endPos[1]) == 1) // going diagonal
+            } else if (Math.abs(startPos[0] - endPos[0]) == 1 && (startPos[1] - endPos[1]) == 1) // going diagonal
             {
                 if (startPos[0] - endPos[0] == -1 && frontView[0] != null)//&& frontView[2].getIsBlack()) //left
                 {
