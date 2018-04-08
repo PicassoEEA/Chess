@@ -23,10 +23,10 @@ public class TestByTxt {
             //ChessTester ct = new ChessTester(curPath+"\\..\\TestingFiles\\checkMateTest.txt");
             ChessTester ct = new ChessTester(curPath+"\\..\\TestingFiles\\endGameTest.txt");
             System.out.print("please enter the White player's name : ");
-            whitePlayer = Player.createPlayer(ct.getNext());
+            whitePlayer = Player.createPlayer("player1");
             System.out.println();
             System.out.print("please enter the Black player's name : ");
-            blackPlayer = Player.createPlayer(ct.getNext());
+            blackPlayer = Player.createPlayer("player2");
 
             String inputLine = "";
             String[] move = null;
