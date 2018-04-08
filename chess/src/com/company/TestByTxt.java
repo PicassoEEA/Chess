@@ -27,6 +27,7 @@ public class TestByTxt {
             System.out.println();
             System.out.print("please enter the Black player's name : ");
             blackPlayer = Player.createPlayer("player2");
+            System.out.println();
 
             String inputLine = "";
             String[] move = null;
@@ -43,10 +44,10 @@ public class TestByTxt {
                         System.out.print(whitePlayer + "'s move : ");
                         move = seperater(ct.getNext());
                     }
-                    /*if (!Board.endgame(true)){
+                    if (Board.endGame(true)){
                         System.out.println("white player wins!!");
                         break;
-                    }*/
+                    }
                     System.out.println("================================");
                     System.out.println(board);
                     System.out.println("================================");
@@ -57,10 +58,10 @@ public class TestByTxt {
                         System.out.print(blackPlayer + "'s move : ");
                         move = seperater(ct.getNext());
                     }
-                    /*if (!Board.endgame(false)){
+                    if (Board.endGame(false)){
                         System.out.println("black player wins!!");
                         break;
-                    }*/
+                    }
                 }
                 catch(StringIndexOutOfBoundsException i){
                     System.out.println("already quit");

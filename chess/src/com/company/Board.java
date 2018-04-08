@@ -262,7 +262,7 @@ public class Board {
 
     }
 
-    public static boolean endgame(boolean isBlack){//by eric; true for keep playing and false for end game
+    /*public static boolean endgame(boolean isBlack){//by eric; true for keep playing and false for end game
         int[] startPos = new int[2];
         int[] endPos = new int[2];
         Piece temp = null;
@@ -297,6 +297,51 @@ public class Board {
             }
 
             return false;
+        }
+        return true;
+    }*/
+
+    /*public static boolean endGame(boolean isBlack){//true for endgame and false for comtinues
+        Piece[][] tempPieces = new Piece[8][8];
+        for (int i = 0 ; i < 8 ; i++){//copy a board
+            for (int j = 0 ; j < 8 ; j++)
+                tempPieces[i][j] = pieces[i][j];
+        }
+        if (ifMate(isBlack)){
+            for (int i = 0 ; i < 8 ; i++){//copy a board
+                for (int j = 0 ; j < 8 ; j++)
+                    if (pieces[i][j] != null && pieces[i][j].checkIsBlack() == isBlack){
+                    int [] startPos = {j,i};
+                        for (int k = 0 ; k < 8 ; k++){
+                            for (int l = 0 ; l < 8 ; l++){
+                                int [] endPos = {l,k};
+                                if (clearPath(startPos,endPos) && pieces[i][j].checkMove(startPos, endPos)){
+                                    move(startPos,endPos);
+                                    if(!ifMate(isBlack)){
+                                        pieces = tempPieces;
+                                        return false;
+                                    }
+                                }
+                            }
+                        }
+                    }
+            }
+            pieces = tempPieces;
+            return true;
+        }
+
+
+
+        return false;
+    }*/
+
+    public static boolean endGame(boolean isBlack){//true for end game and false for continue
+        //boolean output = false;
+        for (int i = 0 ; i < 8 ; i++){
+            for (int j = 0 ; j < 8 ; j++){
+                if (pieces[i][j] instanceof King && pieces[i][j].checkIsBlack() == isBlack)
+                    return false;
+            }
         }
         return true;
     }
