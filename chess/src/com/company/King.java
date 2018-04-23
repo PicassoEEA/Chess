@@ -36,14 +36,22 @@ public class King extends Piece {
                 numOfWhitePieces -= 1;
         }
     }
+
+    // modified by Eric, at 20180423
+    // king move 2 step's condition
     public boolean checkMove(int[] startPos, int[] endPos){ //created by jeremy modified by stevo3.16
         if (Math.abs(startPos[0] - endPos[0]) <= 1 && Math.abs(startPos[1] - endPos[1]) <= 1){
             return true;
         }
-        else if(!moved && endPos[0] - startPos[0] == 2){
+        //else if(!moved && endPos[0] - startPos[0] == 2){
+        //    return true;
+        //}
+        else if (isBlack && startPos[1]==0 && endPos[1]==0 && Math.abs(startPos[0]-endPos[0])==2){
             return true;
         }
-        else
+        else if (!isBlack && startPos[1]==7 && endPos[1]==7 && Math.abs(startPos[0]-endPos[0])==2){
+            return true;
+        }       else
             return false;
 
     }

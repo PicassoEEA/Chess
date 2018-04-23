@@ -13,7 +13,12 @@ public class ChessTester {
 
     public String getNext() throws Exception{
         String str = br.readLine();
-        System.out.println(str);
+        if (str==null){
+            System.out.println("(end of input file)");
+        }
+        else {
+            System.out.println(str);
+        }
         return str;
     }
 

@@ -21,7 +21,8 @@ public class TestByTxt {
 
             String curPath = directory.getAbsolutePath();
             //ChessTester ct = new ChessTester(curPath+"\\..\\TestingFiles\\checkMateTest.txt");
-            ChessTester ct = new ChessTester("/Users/steeevo/Desktop/School/CS/Chess/TestingFiles/endGameTest.txt");
+            ChessTester ct = new ChessTester("D:\\Documents\\github\\Chess\\TestingFiles\\testFromTeacher.txt");
+
             System.out.print("please enter the White player's name : ");
             whitePlayer = Player.createPlayer("player1");
             System.out.println();
@@ -38,6 +39,12 @@ public class TestByTxt {
                     System.out.println("================================");
                     System.out.print(whitePlayer + "'s move : ");
                     move = seperater(ct.getNext());
+                    if (move==null){
+                        // end of the file
+                        System.out.println("quit");
+                        break;
+                    }
+
                     while(!whitePlayer.move(move[0], move[1]))
                     {
                         System.out.println("illegal move, please enter again");
@@ -53,6 +60,12 @@ public class TestByTxt {
                     System.out.println("================================");
                     System.out.print(blackPlayer + "'s move : ");
                     move = seperater(ct.getNext());
+                    if (move==null){
+                        // end of the file
+                        System.out.println("quit");
+                        break;
+                    }
+
                     while(!blackPlayer.move(move[0], move[1])) {
                         System.out.println("illegal move, please enter again");
                         System.out.print(blackPlayer + "'s move : ");
@@ -67,6 +80,10 @@ public class TestByTxt {
                     System.out.println("already quit");
                     break;
                 }
+                catch (NullPointerException ex) {
+                    System.out.println("input end");
+                    break;
+                }
             }
         }
         catch (Exception i){
@@ -76,9 +93,13 @@ public class TestByTxt {
 
 
     }
-    private static String[] seperater(String input){
+    private static String[] seperater(String input) throws Exception{
         String[] seperateString = new String[2];
         int positionOfcomma = 0;
+        if (input==null)
+        {
+            return null;
+        }
         for(int i = 0; i < input.length(); i ++){
             /*if(input.substring(i,i + 1) == ","){
                  seperateString[positionOfcomma ] = input.substring(positionOfcomma );

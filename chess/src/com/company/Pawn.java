@@ -4,7 +4,7 @@ public class Pawn extends Piece {
 
     protected static int numOfWhitePieces = 0;
     protected static int numOfBlackPieces = 0;
-    private boolean moved = false;
+    //private boolean moved = false;
     private boolean isBlack;// false for white and true for black
     //static int step = 0;
 
@@ -40,6 +40,9 @@ public class Pawn extends Piece {
         }
     }
 
+    // modified by Eric, at 20180423
+    // write pawn diagonal
+    // how to check the first move
     public boolean checkMove(int[] startPos, int[] endPos) { //Luvin created Stevo modified !!This mehthod is not completed because it requires getIsBlack()
         // modified the conditions for different sides, by Eric
         Piece[] frontView = Board.getView(startPos, isBlack);
@@ -47,11 +50,15 @@ public class Pawn extends Piece {
         {
             if (startPos[0] == endPos[0] && frontView[1] == null && (startPos[1] - endPos[1] < 0) && (startPos[1] - endPos[1] >= -2)) // Going straight
             {
-                if (!moved && startPos[1] - endPos[1] == 2) { //first time move
-                    moved = false;
+                if ( startPos[1]==1 && startPos[1] - endPos[1] == -2) { //first time move
                     return true;
-                } else
+                } else if (startPos[1] - endPos[1] == -1){
                     return true;        //normal move
+                }
+                else
+                {
+                    return false;
+                }
             } else if (Math.abs(startPos[0] - endPos[0]) == 1 && (startPos[1] - endPos[1] == -1)) // going diagonal
             {
                 if (startPos[0] - endPos[0] == 1 && frontView[0] != null)// &&frontView[0].getIsBlack()) //left
@@ -66,17 +73,21 @@ public class Pawn extends Piece {
         } else {
             if (startPos[0] == endPos[0] && frontView[1] == null && (startPos[1] - endPos[1] > 0) && (startPos[1] - endPos[1] <= 2)) // Going straight
             {
-                if (!moved && (startPos[1] - endPos[1] == 2)) { //first time move
-                    moved = false;
+                if (startPos[1]==6 && (startPos[1] - endPos[1] == 2)) { //first time move
                     return true;
-                } else
+                } else if ((startPos[1] - endPos[1] == 1)){
                     return true;        //normal move
+                }
+                else
+                {
+                    return false;
+                }
             } else if (Math.abs(startPos[0] - endPos[0]) == 1 && (startPos[1] - endPos[1]) == 1) // going diagonal
             {
-                if (startPos[0] - endPos[0] == -1 && frontView[0] != null)//&& frontView[2].getIsBlack()) //left
+                if (startPos[0] - endPos[0] == -1 && frontView[2] != null)//&& frontView[2].getIsBlack()) //left
                 {
                     return true;
-                } else if (startPos[0] - endPos[0] == 1&& frontView[2] != null)//&& !frontView[0].getIsBlack()) //right
+                } else if (startPos[0] - endPos[0] == 1&& frontView[0] != null)//&& !frontView[0].getIsBlack()) //right
                 {
                     return true;
                 } else
